@@ -8,7 +8,15 @@ import {
   Instagram,
   ArrowRight,
   Check,
+  Star,
+  Quote,
 } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 import logoDark from "@/assets/unita-dark.png.asset.json";
 import logoLight from "@/assets/unita-light.png.asset.json";
@@ -17,6 +25,8 @@ import serviceFacetas from "@/assets/service-facetas.jpg";
 import serviceImplante from "@/assets/service-implante.jpg";
 import serviceInvisalign from "@/assets/service-invisalign.jpg";
 import clinicInterior from "@/assets/clinic-interior.jpg";
+import esteticaFacial from "@/assets/estetica-facial.jpg";
+import resultSmile from "@/assets/result-smile.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 
@@ -79,6 +89,65 @@ const services = [
 ];
 
 const bairros = ["Paraíso", "Jardins", "Jardim Stela", "Centro de SBC", "Centro de Santo André"];
+
+const steps = [
+  {
+    num: "01",
+    title: "Agende pelo Instagram",
+    text: "Envie uma mensagem para @odontounita e escolha o melhor dia e horário para você.",
+  },
+  {
+    num: "02",
+    title: "Avaliação gratuita",
+    text: "Você é recebido com calma: exame completo, escuta atenta e um plano de tratamento personalizado.",
+  },
+  {
+    num: "03",
+    title: "Sorriso transformado",
+    text: "Tratamento com qualidade, preço justo e parcelamento facilitado no cartão ou boleto.",
+  },
+];
+
+const depoimentos = [
+  {
+    name: "Mariana S.",
+    bairro: "Jardins",
+    text: "Fiz minhas facetas em resina e o clareamento. Resultado super natural e o atendimento foi acolhedor do início ao fim. Me senti em casa!",
+  },
+  {
+    name: "Carlos E.",
+    bairro: "Centro de SBC",
+    text: "Coloquei meu implante com parcelamento que coube no meu bolso. Equipe atenciosa, tudo explicado com paciência. Recomendo demais.",
+  },
+  {
+    name: "Júlia R.",
+    bairro: "Centro de Santo André",
+    text: "Estou tratando com Invisalign e nem parece que uso alinhador. A avaliação gratuita me deu total segurança para começar.",
+  },
+];
+
+const faqs = [
+  {
+    q: "A consulta de avaliação é realmente gratuita?",
+    a: "Sim! A primeira consulta de avaliação é 100% gratuita e sem compromisso. Você conhece a clínica, conversa com a equipe e recebe um plano de tratamento personalizado.",
+  },
+  {
+    q: "Quais formas de pagamento vocês aceitam?",
+    a: "Aceitamos cartão de crédito (com parcelamento facilitado) e boleto bancário. Nosso compromisso é encontrar uma condição que caiba no seu orçamento.",
+  },
+  {
+    q: "Qual a diferença entre faceta em resina e clareamento?",
+    a: "O clareamento devolve o tom branco natural dos seus dentes. Já as facetas em resina remodelam formato, alinhamento e cor — ideais para transformar o design do sorriso. Na avaliação, indicamos o melhor caminho para o seu caso.",
+  },
+  {
+    q: "O Invisalign funciona para qualquer idade?",
+    a: "Sim! O alinhador invisível é indicado para jovens e adultos que querem alinhar os dentes com discrição e conforto, sem aparelho fixo.",
+  },
+  {
+    q: "Vocês atendem quais regiões?",
+    a: "Atendemos pacientes do Paraíso, Jardins, Jardim Stela, Centro de São Bernardo do Campo e Centro de Santo André — e toda a região do ABC Paulista.",
+  },
+];
 
 function Index() {
   return (
