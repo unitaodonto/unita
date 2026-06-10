@@ -251,6 +251,42 @@ function Index() {
         </div>
       </section>
 
+      {/* Estética facial */}
+      <section className="bg-espresso text-espresso-foreground">
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
+          <div>
+            <p className="eyebrow mb-5">Além do sorriso</p>
+            <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+              Estética <em className="font-normal italic text-gold">facial</em> que realça quem você é
+            </h2>
+            <p className="mt-7 max-w-md leading-relaxed text-espresso-foreground/70">
+              Harmonia entre o sorriso e o rosto: cuidados estéticos faciais com técnica, segurança e
+              naturalidade — para você se sentir bem por inteiro.
+            </p>
+            <ul className="mt-8 space-y-3">
+              {["Avaliação personalizada do rosto e do sorriso", "Procedimentos seguros e minimamente invasivos", "Resultados naturais, sem exageros"].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-espresso-foreground/85">
+                  <Check className="h-4 w-4 shrink-0 text-gold" /> {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-10">
+              <CTAButton variant="light">Quero saber mais</CTAButton>
+            </div>
+          </div>
+          <div className="shadow-soft overflow-hidden rounded-t-full">
+            <img
+              src={esteticaFacial}
+              alt="Sala de estética facial da Unità"
+              loading="lazy"
+              width={896}
+              height={1120}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Humanized care */}
       <section className="bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
