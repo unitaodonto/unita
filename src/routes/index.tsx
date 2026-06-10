@@ -27,6 +27,9 @@ import serviceInvisalign from "@/assets/service-invisalign.jpg";
 import clinicInterior from "@/assets/clinic-interior.jpg";
 import esteticaFacial from "@/assets/estetica-facial.jpg";
 import resultSmile from "@/assets/result-smile.jpg";
+import locationReception from "@/assets/location-reception.jpg";
+import locationRoom from "@/assets/location-room.jpg";
+import locationDetail from "@/assets/location-detail.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 
@@ -54,15 +57,15 @@ export const Route = createFileRoute("/")({
 
 function CTAButton({ children, variant = "dark" }: { children: React.ReactNode; variant?: "dark" | "light" }) {
   const base =
-    "group inline-flex items-center gap-3 px-8 py-4 text-[0.78rem] font-normal uppercase tracking-[0.22em] transition-all duration-300";
+    "group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-9 py-4 text-[0.78rem] font-normal uppercase tracking-[0.22em] transition-all duration-500 shadow-soft hover:shadow-card hover:-translate-y-0.5";
   const styles =
     variant === "dark"
-      ? "bg-espresso text-espresso-foreground hover:bg-foreground"
-      : "bg-cream text-foreground hover:bg-background";
+      ? "bg-espresso text-espresso-foreground hover:bg-gold hover:text-espresso"
+      : "bg-cream text-foreground hover:bg-gold hover:text-espresso";
   return (
     <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className={`${base} ${styles}`}>
-      {children}
-      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+      <span className="relative z-10">{children}</span>
+      <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1.5" />
     </a>
   );
 }
@@ -200,9 +203,14 @@ function Index() {
                   height={1280}
                 />
               </div>
-              <div className="shadow-soft absolute -bottom-6 -left-6 hidden bg-background px-6 py-5 md:block">
-                <p className="font-display text-3xl font-medium text-gold">+ de 5</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">bairros atendidos</p>
+              <div className="shadow-soft absolute -bottom-6 -left-6 hidden bg-background px-7 py-5 md:block">
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1} />
+                  ))}
+                </div>
+                <p className="mt-2 font-display text-xl italic text-foreground">“Como em casa.”</p>
+                <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">pacientes Unità</p>
               </div>
             </div>
           </div>
@@ -434,23 +442,64 @@ function Index() {
       </section>
 
       {/* Location */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
-        <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
+      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="grid items-end gap-12 md:grid-cols-2">
           <div>
             <p className="eyebrow mb-5">Onde estamos</p>
             <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
-              Pertinho de <em className="font-normal italic text-gold">você</em>
+              Um refúgio para o seu <em className="font-normal italic text-gold">sorriso</em>
             </h2>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {bairros.map((b) => (
-                <span
-                  key={b}
-                  className="inline-flex items-center gap-2 border border-border bg-card px-5 py-2.5 text-sm text-secondary-foreground"
-                >
-                  <MapPin className="h-3.5 w-3.5 text-gold" strokeWidth={1.5} />
-                  {b}
-                </span>
+            <p className="mt-7 max-w-md leading-relaxed text-muted-foreground">
+              Uma clínica pensada para você se sentir acolhido desde a recepção. Ambiente sereno,
+              luz natural e equipe atenta — no coração do ABC Paulista, com fácil acesso para toda
+              a região de São Bernardo do Campo e Santo André.
+            </p>
+            <ul className="mt-8 space-y-3 text-sm">
+              {[
+                "Recepção acolhedora e sala de espera silenciosa",
+                "Salas clínicas com tecnologia de ponta",
+                "Estacionamento próximo e fácil acesso",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                  <Check className="h-4 w-4 shrink-0 text-gold" /> {item}
+                </li>
               ))}
+            </ul>
+            <p className="mt-8 flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <MapPin className="h-3.5 w-3.5 text-gold" strokeWidth={1.5} />
+              ABC Paulista · SBC & Santo André
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="shadow-card col-span-2 overflow-hidden">
+              <img
+                src={locationReception}
+                alt="Recepção da clínica Unità"
+                loading="lazy"
+                width={1024}
+                height={720}
+                className="aspect-[16/10] w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+            <div className="shadow-card overflow-hidden">
+              <img
+                src={locationDetail}
+                alt="Detalhe acolhedor da sala de espera"
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+            <div className="shadow-card overflow-hidden">
+              <img
+                src={locationRoom}
+                alt="Sala clínica iluminada por luz natural"
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
             </div>
           </div>
         </div>
