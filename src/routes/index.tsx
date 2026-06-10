@@ -91,8 +91,6 @@ const services = [
   },
 ];
 
-const bairros = ["Paraíso", "Jardins", "Jardim Stela", "Centro de SBC", "Centro de Santo André"];
-
 const steps = [
   {
     num: "01",
