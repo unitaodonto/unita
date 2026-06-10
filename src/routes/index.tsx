@@ -343,6 +343,96 @@ function Index() {
         </div>
       </section>
 
+      {/* Como funciona */}
+      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="mb-16 text-center">
+          <p className="eyebrow mb-5">Simples assim</p>
+          <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+            Do primeiro contato ao <em className="font-normal italic text-gold">novo sorriso</em>
+          </h2>
+        </div>
+        <div className="grid gap-12 md:grid-cols-3">
+          {steps.map((s, i) => (
+            <div key={s.num} className="relative text-center">
+              <p className="font-display text-6xl font-light text-gold/40">{s.num}</p>
+              <h3 className="mt-4 font-display text-2xl font-medium">{s.title}</h3>
+              <p className="mx-auto mt-3 max-w-xs leading-relaxed text-muted-foreground">{s.text}</p>
+              {i < steps.length - 1 && (
+                <span className="absolute right-0 top-8 hidden h-px w-16 translate-x-1/2 bg-gold/30 md:block" />
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="mt-14 flex justify-center">
+          <CTAButton>Começar pela avaliação gratuita</CTAButton>
+        </div>
+      </section>
+
+      {/* Depoimentos */}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="mb-16 grid items-end gap-8 md:grid-cols-[1fr_auto]">
+            <div>
+              <p className="eyebrow mb-5">Quem já sorriu com a gente</p>
+              <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+                Histórias <em className="font-normal italic text-gold">reais</em>, sorrisos reais
+              </h2>
+            </div>
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-gold text-gold" strokeWidth={1} />
+              ))}
+            </div>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {depoimentos.map((d) => (
+              <figure key={d.name} className="shadow-card flex flex-col bg-background p-8">
+                <Quote className="h-7 w-7 text-gold/50" strokeWidth={1.2} />
+                <blockquote className="mt-5 flex-1 leading-relaxed text-muted-foreground">
+                  “{d.text}”
+                </blockquote>
+                <figcaption className="mt-7 border-t border-border pt-5">
+                  <p className="font-display text-lg font-medium">{d.name}</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{d.bairro}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto grid max-w-6xl items-start gap-14 px-6 py-24 md:grid-cols-[1fr_1.2fr] md:py-32">
+        <div>
+          <p className="eyebrow mb-5">Dúvidas frequentes</p>
+          <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+            Tudo o que você precisa <em className="font-normal italic text-gold">saber</em>
+          </h2>
+          <div className="shadow-soft mt-10 hidden overflow-hidden rounded-t-full md:block md:max-w-xs">
+            <img
+              src={resultSmile}
+              alt="Sorriso radiante de paciente Unità"
+              loading="lazy"
+              width={896}
+              height={704}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+        <Accordion type="single" collapsible className="w-full">
+          {faqs.map((f) => (
+            <AccordionItem key={f.q} value={f.q} className="border-border">
+              <AccordionTrigger className="py-6 text-left font-display text-xl font-medium hover:no-underline">
+                {f.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+                {f.a}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </section>
+
       {/* Location */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
         <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
