@@ -232,10 +232,11 @@ function Index() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <CTAButton>Agendar avaliação gratuita</CTAButton>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <Check className="h-4 w-4 text-gold" strokeWidth={2} />
+                <span>Avaliação 100% gratuita</span>
+              </div>
             </div>
-            <p className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
-              <Check className="h-4 w-4 text-gold" /> Consulta de avaliação 100% gratuita
-            </p>
           </div>
           <div className="animate-fade-up relative [animation-delay:200ms]">
             <div className="relative mx-auto max-w-sm md:max-w-none">
@@ -246,16 +247,25 @@ function Index() {
                   className="h-full w-full object-cover"
                   width={1024}
                   height={1280}
+                  fetchPriority="high"
                 />
               </div>
-              <div className="shadow-soft absolute -bottom-6 -left-6 hidden bg-background px-7 py-5 md:block">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1} />
-                  ))}
+              <div className="shadow-card absolute -bottom-8 -left-6 hidden bg-background px-7 py-5 md:block">
+                <div className="flex items-center gap-5">
+                  <div>
+                    <p className="font-display text-3xl font-medium text-espresso">+500</p>
+                    <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">sorrisos transformados</p>
+                  </div>
+                  <span className="h-10 w-px bg-border" aria-hidden="true" />
+                  <div>
+                    <div className="flex items-center gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1} />
+                      ))}
+                    </div>
+                    <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">avaliação 5.0</p>
+                  </div>
                 </div>
-                <p className="mt-2 font-display text-xl italic text-foreground">“Como em casa.”</p>
-                <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">pacientes Unità</p>
               </div>
             </div>
           </div>
