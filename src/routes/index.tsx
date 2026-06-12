@@ -104,7 +104,7 @@ export const Route = createFileRoute("/")({
 
 function CTAButton({ children, variant = "dark" }: { children: React.ReactNode; variant?: "dark" | "light" }) {
   const base =
-    "group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-9 py-4 text-[0.78rem] font-normal uppercase tracking-[0.22em] transition-all duration-500 shadow-soft hover:shadow-card hover:-translate-y-0.5";
+    "group relative inline-flex items-center gap-2 sm:gap-3 overflow-hidden rounded-full px-6 py-3.5 sm:px-9 sm:py-4 text-[0.72rem] sm:text-[0.78rem] font-normal uppercase tracking-[0.18em] sm:tracking-[0.22em] transition-all duration-500 shadow-soft hover:shadow-card hover:-translate-y-0.5";
   const styles =
     variant === "dark"
       ? "bg-espresso text-espresso-foreground hover:bg-gold hover:text-espresso"
@@ -202,8 +202,8 @@ function Index() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="absolute inset-x-0 top-0 z-20">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-          <img src={logoDark.url} alt="Unità Odontologia & Estética" className="h-14 w-auto md:h-16" width={854} height={446} />
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6">
+          <img src={logoDark.url} alt="Unità Odontologia & Estética" className="h-12 w-auto sm:h-14 md:h-16" width={854} height={446} />
           <a
             href={INSTAGRAM_URL}
             target="_blank"
@@ -217,25 +217,21 @@ function Index() {
 
       {/* Hero */}
       <section className="bg-gradient-hero relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 pt-36 md:grid-cols-2 md:pb-0 md:pt-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-28 sm:gap-12 sm:px-6 sm:pb-20 sm:pt-32 md:grid-cols-2 md:pb-0 md:pt-32">
           <div className="animate-fade-up">
-            <p className="eyebrow mb-6">Odontologia & Estética · ABC Paulista</p>
-            <h1 className="font-display text-5xl font-light leading-[1.05] md:text-6xl lg:text-7xl">
+            <p className="eyebrow mb-4 sm:mb-6">Odontologia & Estética · ABC Paulista</p>
+            <h1 className="font-display text-4xl font-light leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
               O sorriso que
               <br />
               <em className="font-normal italic text-gold">você merece,</em>
               <br />
               com o cuidado que você sente.
             </h1>
-            <p className="mt-7 max-w-md text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:mt-7 sm:text-lg">
               Atendimento humanizado, estética dental e facial com preço justo — em São Bernardo do Campo e Santo André.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-6">
+            <div className="mt-8 flex flex-wrap items-center gap-5 sm:mt-10 sm:gap-6">
               <CTAButton>Agendar avaliação gratuita</CTAButton>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Check className="h-4 w-4 text-gold" strokeWidth={2} />
-                <span>Avaliação 100% gratuita</span>
-              </div>
             </div>
           </div>
           <div className="animate-fade-up relative [animation-delay:200ms]">
@@ -274,7 +270,7 @@ function Index() {
 
       {/* Marquee strip */}
       <div className="border-y border-border bg-espresso py-4">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-10 gap-y-2 px-6 text-[0.7rem] uppercase tracking-[0.3em] text-espresso-foreground/80">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 text-center text-[0.62rem] uppercase tracking-[0.22em] text-espresso-foreground/80 sm:gap-x-10 sm:px-6 sm:text-[0.7rem] sm:tracking-[0.3em]">
           <span>Avaliação gratuita</span>
           <span className="text-gold">✦</span>
           <span>Cartão & boleto</span>
@@ -286,14 +282,14 @@ function Index() {
       </div>
 
       {/* Services */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="mb-16 max-w-2xl">
-          <p className="eyebrow mb-5">Tratamentos em destaque</p>
-          <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
+        <div className="mb-12 max-w-2xl sm:mb-16">
+          <p className="eyebrow mb-4 sm:mb-5">Tratamentos em destaque</p>
+          <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Estética que respeita a sua <em className="font-normal italic text-gold">naturalidade</em>
           </h2>
         </div>
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
           {services.map((s) => (
             <article key={s.num} className="group">
               <div className="shadow-card overflow-hidden">
@@ -316,10 +312,10 @@ function Index() {
 
       {/* Estética facial */}
       <section className="bg-espresso text-espresso-foreground">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-2 md:py-32">
           <div>
-            <p className="eyebrow mb-5">Além do sorriso</p>
-            <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+            <p className="eyebrow mb-4 sm:mb-5">Além do sorriso</p>
+            <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
               Estética <em className="font-normal italic text-gold">facial</em> que realça quem você é
             </h2>
             <p className="mt-7 max-w-md leading-relaxed text-espresso-foreground/70">
@@ -352,7 +348,7 @@ function Index() {
 
       {/* Humanized care */}
       <section className="bg-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-2 md:py-32">
           <div className="shadow-soft overflow-hidden">
             <img
               src={clinicInterior}
@@ -364,8 +360,8 @@ function Index() {
             />
           </div>
           <div>
-            <p className="eyebrow mb-5">Por que a Unità?</p>
-            <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+            <p className="eyebrow mb-4 sm:mb-5">Por que a Unità?</p>
+            <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
               Cuidado <em className="font-normal italic text-gold">humanizado</em>, do início ao sorriso final
             </h2>
             <ul className="mt-10 space-y-7">
@@ -407,14 +403,14 @@ function Index() {
       </section>
 
       {/* Como funciona */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="mb-16 text-center">
-          <p className="eyebrow mb-5">Simples assim</p>
-          <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
+        <div className="mb-12 text-center sm:mb-16">
+          <p className="eyebrow mb-4 sm:mb-5">Simples assim</p>
+          <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Do primeiro contato ao <em className="font-normal italic text-gold">novo sorriso</em>
           </h2>
         </div>
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-10 sm:gap-12 md:grid-cols-3">
           {steps.map((s, i) => (
             <div key={s.num} className="relative text-center">
               <p className="font-display text-6xl font-light text-gold/40">{s.num}</p>
@@ -433,11 +429,11 @@ function Index() {
 
       {/* Depoimentos */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="mb-16 grid items-end gap-8 md:grid-cols-[1fr_auto]">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
+          <div className="mb-12 grid items-end gap-6 sm:mb-16 sm:gap-8 md:grid-cols-[1fr_auto]">
             <div>
-              <p className="eyebrow mb-5">Quem já sorriu com a gente</p>
-              <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+              <p className="eyebrow mb-4 sm:mb-5">Quem já sorriu com a gente</p>
+              <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
                 Histórias <em className="font-normal italic text-gold">reais</em>, sorrisos reais
               </h2>
             </div>
@@ -447,9 +443,9 @@ function Index() {
               ))}
             </div>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3">
             {depoimentos.map((d) => (
-              <figure key={d.name} className="shadow-card flex flex-col bg-background p-8">
+              <figure key={d.name} className="shadow-card flex flex-col bg-background p-6 sm:p-8">
                 <Quote className="h-7 w-7 text-gold/50" strokeWidth={1.2} />
                 <blockquote className="mt-5 flex-1 leading-relaxed text-muted-foreground">
                   “{d.text}”
@@ -465,10 +461,10 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto grid max-w-6xl items-start gap-14 px-6 py-24 md:grid-cols-[1fr_1.2fr] md:py-32">
+      <section className="mx-auto grid max-w-6xl items-start gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-[1fr_1.2fr] md:py-32">
         <div>
-          <p className="eyebrow mb-5">Dúvidas frequentes</p>
-          <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+          <p className="eyebrow mb-4 sm:mb-5">Dúvidas frequentes</p>
+          <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Tudo o que você precisa <em className="font-normal italic text-gold">saber</em>
           </h2>
           <div className="shadow-soft mt-10 hidden overflow-hidden rounded-t-full md:block md:max-w-xs">
@@ -485,10 +481,10 @@ function Index() {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((f) => (
             <AccordionItem key={f.q} value={f.q} className="border-border">
-              <AccordionTrigger className="py-6 text-left font-display text-xl font-medium hover:no-underline">
+              <AccordionTrigger className="py-5 text-left font-display text-lg font-medium hover:no-underline sm:py-6 sm:text-xl">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+              <AccordionContent className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {f.a}
               </AccordionContent>
             </AccordionItem>
@@ -497,11 +493,11 @@ function Index() {
       </section>
 
       {/* Location */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="grid items-end gap-12 md:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
+        <div className="grid items-end gap-10 sm:gap-12 md:grid-cols-2">
           <div>
-            <p className="eyebrow mb-5">Onde estamos</p>
-            <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+            <p className="eyebrow mb-4 sm:mb-5">Onde estamos</p>
+            <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
               Um refúgio para o seu <em className="font-normal italic text-gold">sorriso</em>
             </h2>
             <p className="mt-7 max-w-md leading-relaxed text-muted-foreground">
@@ -562,19 +558,19 @@ function Index() {
 
       {/* Final CTA */}
       <section className="bg-espresso text-espresso-foreground">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
+        <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-24 md:py-32">
           <img
             src={logoLight.url}
             alt=""
             loading="lazy"
-            className="mx-auto mb-10 h-20 w-auto opacity-90"
+            className="mx-auto mb-8 h-16 w-auto opacity-90 sm:mb-10 sm:h-20"
             width={854}
             height={446}
           />
-          <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+          <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Sua avaliação gratuita está a <em className="font-normal italic text-gold">um passo</em>
           </h2>
-          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-espresso-foreground/70">
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-espresso-foreground/70 sm:mt-6 sm:text-base">
             Fale com a nossa equipe pelo Instagram e agende o melhor horário. Pagamento facilitado no cartão e boleto.
           </p>
           <div className="mt-10 flex justify-center">
@@ -585,7 +581,7 @@ function Index() {
 
       {/* Footer */}
       <footer className="border-t border-espresso-foreground/10 bg-espresso py-8 text-espresso-foreground/60">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-xs uppercase tracking-[0.25em] sm:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-center text-[0.65rem] uppercase tracking-[0.2em] sm:flex-row sm:px-6 sm:text-xs sm:tracking-[0.25em]">
           <span>© {new Date().getFullYear()} Unità Odontologia & Estética</span>
           <a
             href={INSTAGRAM_URL}
