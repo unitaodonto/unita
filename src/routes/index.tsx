@@ -42,14 +42,61 @@ export const Route = createFileRoute("/")({
         content:
           "Atendimento humanizado, estética dental e facial. Facetas, clareamento, implantes e Invisalign. Avaliação gratuita em São Bernardo e Santo André.",
       },
-      { property: "og:title", content: "Unità Odontologia & Estética" },
+      { property: "og:title", content: "Unità Odontologia & Estética | SBC e Santo André" },
       {
         property: "og:description",
         content:
           "Seu sorriso, cuidado com excelência. Avaliação gratuita, preço justo e facilidade de pagamento.",
       },
+      { property: "og:url", content: "https://unitaodonto.lovable.app/" },
       { property: "og:image", content: heroSmile },
+      { name: "twitter:title", content: "Unità Odontologia & Estética" },
+      { name: "twitter:description", content: "Avaliação gratuita, estética dental e facial em SBC e Santo André." },
       { name: "twitter:image", content: heroSmile },
+      { name: "keywords", content: "odontologia, dentista, facetas em resina, clareamento dental, implante dentário, invisalign, estética facial, São Bernardo do Campo, Santo André, ABC Paulista" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://unitaodonto.lovable.app/" },
+      { rel: "preload", as: "image", href: heroSmile, fetchpriority: "high" } as unknown as { rel: string; href: string },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Dentist",
+          name: "Unità Odontologia & Estética",
+          description:
+            "Clínica odontológica com atendimento humanizado, estética dental e facial — facetas, clareamento, implantes e Invisalign.",
+          url: "https://unitaodonto.lovable.app/",
+          image: "https://unitaodonto.lovable.app" + heroSmile,
+          telephone: "",
+          priceRange: "$$",
+          areaServed: [
+            { "@type": "City", name: "São Bernardo do Campo" },
+            { "@type": "City", name: "Santo André" },
+          ],
+          sameAs: ["https://www.instagram.com/odontounita/"],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "5",
+            reviewCount: "27",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "A consulta de avaliação é realmente gratuita?", acceptedAnswer: { "@type": "Answer", text: "Sim! A primeira consulta de avaliação é 100% gratuita e sem compromisso." } },
+            { "@type": "Question", name: "Quais formas de pagamento vocês aceitam?", acceptedAnswer: { "@type": "Answer", text: "Aceitamos cartão de crédito com parcelamento facilitado e boleto bancário." } },
+            { "@type": "Question", name: "O Invisalign funciona para qualquer idade?", acceptedAnswer: { "@type": "Answer", text: "Sim, é indicado para jovens e adultos que querem alinhar os dentes com discrição." } },
+            { "@type": "Question", name: "Vocês atendem quais regiões?", acceptedAnswer: { "@type": "Answer", text: "Paraíso, Jardins, Jardim Stela, Centro de SBC e Centro de Santo André — e toda a região do ABC Paulista." } },
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
@@ -185,10 +232,11 @@ function Index() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <CTAButton>Agendar avaliação gratuita</CTAButton>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <Check className="h-4 w-4 text-gold" strokeWidth={2} />
+                <span>Avaliação 100% gratuita</span>
+              </div>
             </div>
-            <p className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
-              <Check className="h-4 w-4 text-gold" /> Consulta de avaliação 100% gratuita
-            </p>
           </div>
           <div className="animate-fade-up relative [animation-delay:200ms]">
             <div className="relative mx-auto max-w-sm md:max-w-none">
@@ -199,16 +247,25 @@ function Index() {
                   className="h-full w-full object-cover"
                   width={1024}
                   height={1280}
+                  fetchPriority="high"
                 />
               </div>
-              <div className="shadow-soft absolute -bottom-6 -left-6 hidden bg-background px-7 py-5 md:block">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1} />
-                  ))}
+              <div className="shadow-card absolute -bottom-8 -left-6 hidden bg-background px-7 py-5 md:block">
+                <div className="flex items-center gap-5">
+                  <div>
+                    <p className="font-display text-3xl font-medium text-espresso">+500</p>
+                    <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">sorrisos transformados</p>
+                  </div>
+                  <span className="h-10 w-px bg-border" aria-hidden="true" />
+                  <div>
+                    <div className="flex items-center gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1} />
+                      ))}
+                    </div>
+                    <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">avaliação 5.0</p>
+                  </div>
                 </div>
-                <p className="mt-2 font-display text-xl italic text-foreground">“Como em casa.”</p>
-                <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">pacientes Unità</p>
               </div>
             </div>
           </div>
