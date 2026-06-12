@@ -42,14 +42,61 @@ export const Route = createFileRoute("/")({
         content:
           "Atendimento humanizado, estética dental e facial. Facetas, clareamento, implantes e Invisalign. Avaliação gratuita em São Bernardo e Santo André.",
       },
-      { property: "og:title", content: "Unità Odontologia & Estética" },
+      { property: "og:title", content: "Unità Odontologia & Estética | SBC e Santo André" },
       {
         property: "og:description",
         content:
           "Seu sorriso, cuidado com excelência. Avaliação gratuita, preço justo e facilidade de pagamento.",
       },
+      { property: "og:url", content: "https://unitaodonto.lovable.app/" },
       { property: "og:image", content: heroSmile },
+      { name: "twitter:title", content: "Unità Odontologia & Estética" },
+      { name: "twitter:description", content: "Avaliação gratuita, estética dental e facial em SBC e Santo André." },
       { name: "twitter:image", content: heroSmile },
+      { name: "keywords", content: "odontologia, dentista, facetas em resina, clareamento dental, implante dentário, invisalign, estética facial, São Bernardo do Campo, Santo André, ABC Paulista" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://unitaodonto.lovable.app/" },
+      { rel: "preload", as: "image", href: heroSmile, fetchpriority: "high" } as unknown as { rel: string; href: string },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Dentist",
+          name: "Unità Odontologia & Estética",
+          description:
+            "Clínica odontológica com atendimento humanizado, estética dental e facial — facetas, clareamento, implantes e Invisalign.",
+          url: "https://unitaodonto.lovable.app/",
+          image: "https://unitaodonto.lovable.app" + heroSmile,
+          telephone: "",
+          priceRange: "$$",
+          areaServed: [
+            { "@type": "City", name: "São Bernardo do Campo" },
+            { "@type": "City", name: "Santo André" },
+          ],
+          sameAs: ["https://www.instagram.com/odontounita/"],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "5",
+            reviewCount: "27",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "A consulta de avaliação é realmente gratuita?", acceptedAnswer: { "@type": "Answer", text: "Sim! A primeira consulta de avaliação é 100% gratuita e sem compromisso." } },
+            { "@type": "Question", name: "Quais formas de pagamento vocês aceitam?", acceptedAnswer: { "@type": "Answer", text: "Aceitamos cartão de crédito com parcelamento facilitado e boleto bancário." } },
+            { "@type": "Question", name: "O Invisalign funciona para qualquer idade?", acceptedAnswer: { "@type": "Answer", text: "Sim, é indicado para jovens e adultos que querem alinhar os dentes com discrição." } },
+            { "@type": "Question", name: "Vocês atendem quais regiões?", acceptedAnswer: { "@type": "Answer", text: "Paraíso, Jardins, Jardim Stela, Centro de SBC e Centro de Santo André — e toda a região do ABC Paulista." } },
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
