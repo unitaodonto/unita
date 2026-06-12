@@ -217,7 +217,7 @@ function Index() {
 
       {/* Hero */}
       <section className="bg-gradient-hero relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-28 sm:gap-12 sm:px-6 sm:pb-20 sm:pt-32 md:grid-cols-2 md:pb-0 md:pt-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-20 pt-28 sm:gap-12 sm:px-6 sm:pb-24 sm:pt-32 md:grid-cols-2 md:pb-20 md:pt-32 lg:pb-24">
           <div className="animate-fade-up">
             <p className="eyebrow mb-4 sm:mb-6">Odontologia & Estética · ABC Paulista</p>
             <h1 className="font-display text-4xl font-light leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
