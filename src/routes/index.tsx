@@ -221,17 +221,17 @@ function Index() {
           <div className="animate-fade-up">
             <p className="eyebrow mb-4 sm:mb-6">Odontologia & Estética · ABC Paulista</p>
             <h1 className="font-display text-4xl font-light leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
-              O sorriso que
+              Seu sorriso,
               <br />
-              <em className="font-normal italic text-gold">você merece,</em>
+              <em className="font-normal italic text-gold">bem cuidado.</em>
               <br />
-              com o cuidado que você sente.
+              Sem complicação.
             </h1>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:mt-7 sm:text-lg">
-              Atendimento humanizado, estética dental e facial com preço justo — em São Bernardo do Campo e Santo André.
+              A gente cuida do seu sorriso com calma, atenção e um preço que cabe no bolso. Em SBC e Santo André.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-5 sm:mt-10 sm:gap-6">
-              <CTAButton>Agendar avaliação gratuita</CTAButton>
+              <CTAButton>Quero marcar minha avaliação</CTAButton>
             </div>
           </div>
           <div className="animate-fade-up relative [animation-delay:200ms]">
@@ -246,23 +246,6 @@ function Index() {
                   fetchPriority="high"
                 />
               </div>
-              <div className="shadow-card absolute -bottom-8 -left-6 hidden bg-background px-7 py-5 md:block">
-                <div className="flex items-center gap-5">
-                  <div>
-                    <p className="font-display text-3xl font-medium text-espresso">+500</p>
-                    <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">sorrisos transformados</p>
-                  </div>
-                  <span className="h-10 w-px bg-border" aria-hidden="true" />
-                  <div>
-                    <div className="flex items-center gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1} />
-                      ))}
-                    </div>
-                    <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">avaliação 5.0</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -271,22 +254,22 @@ function Index() {
       {/* Marquee strip */}
       <div className="border-y border-border bg-espresso py-4">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 text-center text-[0.62rem] uppercase tracking-[0.22em] text-espresso-foreground/80 sm:gap-x-10 sm:px-6 sm:text-[0.7rem] sm:tracking-[0.3em]">
-          <span>Avaliação gratuita</span>
+          <span>1ª consulta por nossa conta</span>
           <span className="text-gold">✦</span>
           <span>Cartão & boleto</span>
           <span className="text-gold">✦</span>
-          <span>Preço justo</span>
+          <span>Preço que cabe</span>
           <span className="text-gold">✦</span>
-          <span>Atendimento humanizado</span>
+          <span>Atendimento com calma</span>
         </div>
       </div>
 
       {/* Services */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
         <div className="mb-12 max-w-2xl sm:mb-16">
-          <p className="eyebrow mb-4 sm:mb-5">Tratamentos em destaque</p>
+          <p className="eyebrow mb-4 sm:mb-5">O que a gente faz</p>
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
-            Estética que respeita a sua <em className="font-normal italic text-gold">naturalidade</em>
+            Tratamentos pensados pra ficar <em className="font-normal italic text-gold">natural</em>
           </h2>
         </div>
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
@@ -314,23 +297,22 @@ function Index() {
       <section className="bg-espresso text-espresso-foreground">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-2 md:py-32">
           <div>
-            <p className="eyebrow mb-4 sm:mb-5">Além do sorriso</p>
+            <p className="eyebrow mb-4 sm:mb-5">Pra além do sorriso</p>
             <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
-              Estética <em className="font-normal italic text-gold">facial</em> que realça quem você é
+              Cuidado com o <em className="font-normal italic text-gold">rosto</em> também
             </h2>
             <p className="mt-7 max-w-md leading-relaxed text-espresso-foreground/70">
-              Harmonia entre o sorriso e o rosto: cuidados estéticos faciais com técnica, segurança e
-              naturalidade — para você se sentir bem por inteiro.
+              Porque o sorriso vem junto com o rosto. A gente cuida dos dois com segurança e sem exagero — pra você se sentir bem com o seu rosto, não com o de outra pessoa.
             </p>
             <ul className="mt-8 space-y-3">
-              {["Avaliação personalizada do rosto e do sorriso", "Procedimentos seguros e minimamente invasivos", "Resultados naturais, sem exageros"].map((item) => (
+              {["Avaliação no seu tempo, sem pressa", "Procedimentos seguros e pouco invasivos", "Resultado natural, do seu jeito"].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-espresso-foreground/85">
                   <Check className="h-4 w-4 shrink-0 text-gold" /> {item}
                 </li>
               ))}
             </ul>
             <div className="mt-10">
-              <CTAButton variant="light">Quero saber mais</CTAButton>
+              <CTAButton variant="light">Bora conversar</CTAButton>
             </div>
           </div>
           <div className="shadow-soft overflow-hidden rounded-t-full">
@@ -360,31 +342,31 @@ function Index() {
             />
           </div>
           <div>
-            <p className="eyebrow mb-4 sm:mb-5">Por que a Unità?</p>
+            <p className="eyebrow mb-4 sm:mb-5">Por que a Unità</p>
             <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
-              Cuidado <em className="font-normal italic text-gold">humanizado</em>, do início ao sorriso final
+              A gente trata você como <em className="font-normal italic text-gold">gente</em>, não como número
             </h2>
             <ul className="mt-10 space-y-7">
               {[
                 {
                   icon: HeartHandshake,
-                  title: "Atendimento humanizado",
-                  text: "Você é ouvido com calma e acolhimento — cada plano de tratamento é único, como o seu sorriso.",
+                  title: "A gente escuta",
+                  text: "Cada boca é uma boca. Antes de qualquer coisa, a gente entende o que você quer.",
                 },
                 {
                   icon: Sparkles,
-                  title: "Qualidade com preço justo",
-                  text: "Excelência clínica e estética sem abrir mão de valores acessíveis e transparentes.",
+                  title: "Qualidade sem preço absurdo",
+                  text: "Trabalho bem feito, sem pesar no bolso. Valores claros desde o início.",
                 },
                 {
                   icon: CreditCard,
-                  title: "Facilidade de pagamento",
-                  text: "Parcele no cartão ou pague no boleto. O seu sorriso cabe no seu orçamento.",
+                  title: "Paga do seu jeito",
+                  text: "Cartão parcelado ou boleto. A gente acha um caminho que funcione pra você.",
                 },
                 {
                   icon: CalendarCheck,
-                  title: "Avaliação gratuita",
-                  text: "A primeira consulta é por nossa conta: avaliação completa, sem compromisso.",
+                  title: "1ª consulta é nossa conta",
+                  text: "Vem conhecer, conversar e pensar com calma. Sem pressão pra fechar nada.",
                 },
               ].map((item) => (
                 <li key={item.title} className="flex gap-5">
@@ -405,9 +387,9 @@ function Index() {
       {/* Como funciona */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
         <div className="mb-12 text-center sm:mb-16">
-          <p className="eyebrow mb-4 sm:mb-5">Simples assim</p>
+          <p className="eyebrow mb-4 sm:mb-5">Como funciona</p>
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
-            Do primeiro contato ao <em className="font-normal italic text-gold">novo sorriso</em>
+            Em <em className="font-normal italic text-gold">três passos</em>, sem enrolação
           </h2>
         </div>
         <div className="grid gap-10 sm:gap-12 md:grid-cols-3">
@@ -423,7 +405,7 @@ function Index() {
           ))}
         </div>
         <div className="mt-14 flex justify-center">
-          <CTAButton>Começar pela avaliação gratuita</CTAButton>
+          <CTAButton>Quero marcar a minha</CTAButton>
         </div>
       </section>
 
@@ -432,15 +414,10 @@ function Index() {
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
           <div className="mb-12 grid items-end gap-6 sm:mb-16 sm:gap-8 md:grid-cols-[1fr_auto]">
             <div>
-              <p className="eyebrow mb-4 sm:mb-5">Quem já sorriu com a gente</p>
+              <p className="eyebrow mb-4 sm:mb-5">Quem já passou por aqui</p>
               <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
-                Histórias <em className="font-normal italic text-gold">reais</em>, sorrisos reais
+                O que estão <em className="font-normal italic text-gold">falando</em> da gente
               </h2>
-            </div>
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-gold text-gold" strokeWidth={1} />
-              ))}
             </div>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3">
@@ -463,9 +440,9 @@ function Index() {
       {/* FAQ */}
       <section className="mx-auto grid max-w-6xl items-start gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-[1fr_1.2fr] md:py-32">
         <div>
-          <p className="eyebrow mb-4 sm:mb-5">Dúvidas frequentes</p>
+          <p className="eyebrow mb-4 sm:mb-5">Perguntas que sempre rolam</p>
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
-            Tudo o que você precisa <em className="font-normal italic text-gold">saber</em>
+            Tá com <em className="font-normal italic text-gold">dúvida?</em> A gente responde.
           </h2>
           <div className="shadow-soft mt-10 hidden overflow-hidden rounded-t-full md:block md:max-w-xs">
             <img
@@ -498,18 +475,16 @@ function Index() {
           <div>
             <p className="eyebrow mb-4 sm:mb-5">Onde estamos</p>
             <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
-              Um refúgio para o seu <em className="font-normal italic text-gold">sorriso</em>
+              Pertinho de você, no <em className="font-normal italic text-gold">ABC</em>
             </h2>
             <p className="mt-7 max-w-md leading-relaxed text-muted-foreground">
-              Uma clínica pensada para você se sentir acolhido desde a recepção. Ambiente sereno,
-              luz natural e equipe atenta — no coração do ABC Paulista, com fácil acesso para toda
-              a região de São Bernardo do Campo e Santo André.
+              Nossa clínica foi pensada pra você se sentir tranquilo desde que entra. Bem localizada, com fácil acesso pra quem é de SBC, Santo André e região.
             </p>
             <ul className="mt-8 space-y-3 text-sm">
               {[
-                "Recepção acolhedora e sala de espera silenciosa",
-                "Salas clínicas com tecnologia de ponta",
-                "Estacionamento próximo e fácil acesso",
+                "Recepção tranquila, sem aquela cara de hospital",
+                "Equipamentos novos e bem cuidados",
+                "Estacionamento por perto, fácil de chegar",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-muted-foreground">
                   <Check className="h-4 w-4 shrink-0 text-gold" /> {item}
@@ -568,13 +543,13 @@ function Index() {
             height={446}
           />
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
-            Sua avaliação gratuita está a <em className="font-normal italic text-gold">um passo</em>
+            Bora <em className="font-normal italic text-gold">marcar</em> a sua?
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-espresso-foreground/70 sm:mt-6 sm:text-base">
-            Fale com a nossa equipe pelo Instagram e agende o melhor horário. Pagamento facilitado no cartão e boleto.
+            Manda uma DM pra gente no Instagram e a gente combina um horário. Pagamento no cartão ou no boleto, do seu jeito.
           </p>
           <div className="mt-10 flex justify-center">
-            <CTAButton variant="light">Quero agendar agora</CTAButton>
+            <CTAButton variant="light">Chamar no Instagram</CTAButton>
           </div>
         </div>
       </section>
