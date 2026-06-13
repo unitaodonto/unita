@@ -251,15 +251,22 @@ function Index() {
       </section>
 
       {/* Marquee strip */}
-      <div className="border-y border-border bg-espresso py-4">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 text-center text-[0.62rem] uppercase tracking-[0.22em] text-espresso-foreground/80 sm:gap-x-10 sm:px-6 sm:text-[0.7rem] sm:tracking-[0.3em]">
-          <span>1ª consulta por nossa conta</span>
-          <span className="text-gold">✦</span>
-          <span>Cartão & boleto</span>
-          <span className="text-gold">✦</span>
-          <span>Preço que cabe</span>
-          <span className="text-gold">✦</span>
-          <span>Atendimento com calma</span>
+      <div className="group relative overflow-hidden border-y border-border bg-espresso py-4">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-espresso to-transparent sm:w-16" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-espresso to-transparent sm:w-16" aria-hidden="true" />
+        <div className="flex w-max animate-marquee items-center gap-x-8 text-[0.62rem] uppercase tracking-[0.22em] text-espresso-foreground/80 sm:gap-x-12 sm:text-[0.7rem] sm:tracking-[0.3em] group-hover:[animation-play-state:paused]">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="flex shrink-0 items-center gap-x-8 sm:gap-x-12" aria-hidden={i === 1 ? "true" : undefined}>
+              <span>1ª consulta por nossa conta</span>
+              <span className="text-gold">✦</span>
+              <span>Cartão & boleto</span>
+              <span className="text-gold">✦</span>
+              <span>Preço que cabe</span>
+              <span className="text-gold">✦</span>
+              <span>Atendimento com calma</span>
+              <span className="text-gold">✦</span>
+            </div>
+          ))}
         </div>
       </div>
 
