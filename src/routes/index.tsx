@@ -8,7 +8,6 @@ import {
   Instagram,
   ArrowRight,
   Check,
-  Star,
   Quote,
 } from "lucide-react";
 import {
