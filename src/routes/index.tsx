@@ -235,7 +235,22 @@ function Index() {
           </div>
           <div className="animate-fade-up relative [animation-delay:200ms]">
             <div className="relative mx-auto max-w-sm md:max-w-none">
-              <div className="overflow-hidden rounded-t-full">
+              {/* Offset gold frame */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 translate-x-3 translate-y-3 border border-gold/60 sm:translate-x-4 sm:translate-y-4"
+                style={{ borderRadius: "62% 38% 56% 44% / 60% 55% 45% 40%" }}
+              />
+              {/* Soft gold blur halo */}
+              <div
+                aria-hidden="true"
+                className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-gold/30 blur-3xl sm:h-32 sm:w-32"
+              />
+              {/* Image with organic asymmetric blob mask */}
+              <div
+                className="shadow-soft relative overflow-hidden"
+                style={{ borderRadius: "62% 38% 56% 44% / 60% 55% 45% 40%" }}
+              >
                 <img
                   src={heroSmile}
                   alt="Paciente sorrindo após tratamento estético na Unità"
@@ -245,6 +260,14 @@ function Index() {
                   fetchPriority="high"
                 />
               </div>
+              {/* Floating italic caption tag */}
+              <div className="shadow-card absolute -bottom-4 left-4 hidden bg-background px-5 py-3 sm:left-6 md:block">
+                <p className="font-display text-sm italic text-espresso">
+                  sorria <span className="text-gold">do seu jeito</span>
+                </p>
+              </div>
+              {/* Sparkle accent */}
+              <span className="absolute -right-2 top-8 hidden font-display text-3xl text-gold md:block" aria-hidden="true">✦</span>
             </div>
           </div>
         </div>
