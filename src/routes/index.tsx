@@ -122,78 +122,78 @@ const services = [
     img: serviceFacetas,
     num: "01",
     title: "Facetas em Resina & Clareamento",
-    text: "O design do sorriso que valoriza o seu rosto. Facetas naturais e clareamento seguro para um sorriso luminoso.",
+    text: "Pra quem quer um sorriso mais bonito sem perder o ar de natural. Avaliamos com calma o que faz mais sentido pra você.",
   },
   {
     img: serviceImplante,
     num: "02",
     title: "Implantes & Próteses",
-    text: "Recupere a função e a confiança de sorrir. Reabilitação completa com planejamento e materiais de excelência.",
+    text: "Pra voltar a mastigar bem e sorrir sem se preocupar. Planejamento certinho e materiais de qualidade.",
   },
   {
     img: serviceInvisalign,
     num: "03",
     title: "Invisalign®",
-    text: "Alinhamento invisível, sem aparelho fixo. Discrição e conforto para transformar o sorriso na sua rotina.",
+    text: "Alinhador transparente, sem aquele aparelho fixo. Discreto, confortável e cabe na sua rotina.",
   },
 ];
 
 const steps = [
   {
     num: "01",
-    title: "Agende pelo Instagram",
-    text: "Envie uma mensagem para @odontounita e escolha o melhor dia e horário para você.",
+    title: "Chama no Instagram",
+    text: "Manda uma DM pra @odontounita e a gente combina um horário que funciona pra você.",
   },
   {
     num: "02",
-    title: "Avaliação gratuita",
-    text: "Você é recebido com calma: exame completo, escuta atenta e um plano de tratamento personalizado.",
+    title: "Vem tomar um café",
+    text: "A primeira consulta é nossa conta. A gente conversa, avalia e mostra o caminho — sem pressão pra fechar.",
   },
   {
     num: "03",
-    title: "Sorriso transformado",
-    text: "Tratamento com qualidade, preço justo e parcelamento facilitado no cartão ou boleto.",
+    title: "Começa do seu jeito",
+    text: "Se fizer sentido, a gente combina o tratamento e a melhor forma de pagar. No cartão ou no boleto.",
   },
 ];
 
 const depoimentos = [
   {
-    name: "Mariana S.",
+    name: "Mariana",
     bairro: "Jardins",
-    text: "Fiz minhas facetas em resina e o clareamento. Resultado super natural e o atendimento foi acolhedor do início ao fim. Me senti em casa!",
+    text: "Fiz as facetas e o clareamento. Ficou natural do jeito que eu queria e me trataram super bem.",
   },
   {
-    name: "Carlos E.",
+    name: "Carlos",
     bairro: "Centro de SBC",
-    text: "Coloquei meu implante com parcelamento que coube no meu bolso. Equipe atenciosa, tudo explicado com paciência. Recomendo demais.",
+    text: "Meu implante coube no bolso e a equipe explicou tudo com calma. Recomendo sem pensar.",
   },
   {
-    name: "Júlia R.",
+    name: "Júlia",
     bairro: "Centro de Santo André",
-    text: "Estou tratando com Invisalign e nem parece que uso alinhador. A avaliação gratuita me deu total segurança para começar.",
+    text: "Tô com Invisalign e quase ninguém percebe. A avaliação gratuita me deu segurança pra começar.",
   },
 ];
 
 const faqs = [
   {
     q: "A consulta de avaliação é realmente gratuita?",
-    a: "Sim! A primeira consulta de avaliação é 100% gratuita e sem compromisso. Você conhece a clínica, conversa com a equipe e recebe um plano de tratamento personalizado.",
+    a: "É sim. A primeira consulta é por nossa conta e sem compromisso nenhum — você conhece a clínica, conversa com a gente e sai com um plano pra pensar com calma.",
   },
   {
     q: "Quais formas de pagamento vocês aceitam?",
-    a: "Aceitamos cartão de crédito (com parcelamento facilitado) e boleto bancário. Nosso compromisso é encontrar uma condição que caiba no seu orçamento.",
+    a: "Cartão de crédito (com parcelamento) e boleto. A gente sempre tenta achar uma forma que caiba no seu orçamento.",
   },
   {
     q: "Qual a diferença entre faceta em resina e clareamento?",
-    a: "O clareamento devolve o tom branco natural dos seus dentes. Já as facetas em resina remodelam formato, alinhamento e cor — ideais para transformar o design do sorriso. Na avaliação, indicamos o melhor caminho para o seu caso.",
+    a: "O clareamento deixa os seus dentes mais brancos. A faceta em resina muda formato, alinhamento e cor, ideal pra quem quer mudar mais o visual do sorriso. Na avaliação a gente te indica o melhor pro seu caso.",
   },
   {
     q: "O Invisalign funciona para qualquer idade?",
-    a: "Sim! O alinhador invisível é indicado para jovens e adultos que querem alinhar os dentes com discrição e conforto, sem aparelho fixo.",
+    a: "Funciona pra jovens e adultos que querem alinhar os dentes sem aparelho fixo, com mais discrição e conforto.",
   },
   {
     q: "Vocês atendem quais regiões?",
-    a: "Atendemos pacientes do Paraíso, Jardins, Jardim Stela, Centro de São Bernardo do Campo e Centro de Santo André — e toda a região do ABC Paulista.",
+    a: "Recebemos pacientes de toda a região do ABC: Paraíso, Jardins, Jardim Stela, Centro de SBC e Centro de Santo André.",
   },
 ];
 
