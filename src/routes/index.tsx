@@ -20,20 +20,18 @@ import {
 import logoDark from "@/assets/unita-dark.png.asset.json";
 import logoLight from "@/assets/unita-light.png.asset.json";
 import heroSmile from "@/assets/hero-smile.jpg";
-import serviceFacetas from "@/assets/service-facetas.jpg";
 import serviceImplante from "@/assets/service-implante.jpg";
 import serviceInvisalign from "@/assets/service-invisalign.jpg";
 import clinicInterior from "@/assets/clinic-interior.jpg";
 import esteticaFacial from "@/assets/estetica-facial.jpg";
 import resultSmile from "@/assets/result-smile.jpg";
-import locationReception from "@/assets/location-reception.jpg";
-import locationRoom from "@/assets/location-room.jpg";
-import locationDetail from "@/assets/location-detail.jpg";
+import cafe from "@/assets/cafe.jpg";
 import teamGabriela from "@/assets/team-gabriela.jpg";
 import teamLuana from "@/assets/team-luana.jpg";
 import teamGiovanna from "@/assets/team-giovanna.jpg";
 import teamAnaCarolina from "@/assets/team-ana-carolina.jpg";
 import teamStephany from "@/assets/team-stephany.jpg";
+import teamGroup from "@/assets/team-group.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 
@@ -123,7 +121,7 @@ function CTAButton({ children, variant = "dark" }: { children: React.ReactNode; 
 
 const services = [
   {
-    img: serviceFacetas,
+    img: resultSmile,
     num: "01",
     title: "Facetas em Resina & Clareamento",
     text: "Pra quem quer um sorriso mais bonito sem perder o ar de natural. Avaliamos com calma o que faz mais sentido pra você.",
@@ -395,11 +393,11 @@ function Index() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-2 md:py-32">
           <div className="shadow-soft overflow-hidden">
             <img
-              src={clinicInterior}
-              alt="Ambiente acolhedor da clínica Unità"
+              src={teamGroup}
+              alt="Equipe da Unità reunida na recepção da clínica"
               loading="lazy"
-              width={1280}
-              height={896}
+              width={1200}
+              height={901}
               className="h-full w-full object-cover"
             />
           </div>
@@ -551,11 +549,11 @@ function Index() {
           </h2>
           <div className="shadow-soft mt-10 hidden overflow-hidden rounded-t-full md:block md:max-w-xs">
             <img
-              src={resultSmile}
-              alt="Sorriso radiante de paciente Unità"
+              src={cafe}
+              alt="Cafézinho servido na Unità, com a xícara da marca"
               loading="lazy"
-              width={896}
-              height={704}
+              width={901}
+              height={1200}
               className="h-full w-full object-cover"
             />
           </div>
@@ -601,37 +599,15 @@ function Index() {
               ABC Paulista · SBC & Santo André
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="shadow-card col-span-2 overflow-hidden">
-              <img
-                src={locationReception}
-                alt="Recepção da clínica Unità"
-                loading="lazy"
-                width={1024}
-                height={720}
-                className="aspect-[16/10] w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-            <div className="shadow-card overflow-hidden">
-              <img
-                src={locationDetail}
-                alt="Detalhe acolhedor da sala de espera"
-                loading="lazy"
-                width={1024}
-                height={1024}
-                className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-            <div className="shadow-card overflow-hidden">
-              <img
-                src={locationRoom}
-                alt="Sala clínica iluminada por luz natural"
-                loading="lazy"
-                width={1024}
-                height={1024}
-                className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
+          <div className="shadow-card overflow-hidden">
+            <img
+              src={clinicInterior}
+              alt="Recepção da clínica Unità"
+              loading="lazy"
+              width={1200}
+              height={675}
+              className="aspect-[16/10] w-full object-cover transition-transform duration-700 hover:scale-105"
+            />
           </div>
         </div>
       </section>
