@@ -29,6 +29,11 @@ import resultSmile from "@/assets/result-smile.jpg";
 import locationReception from "@/assets/location-reception.jpg";
 import locationRoom from "@/assets/location-room.jpg";
 import locationDetail from "@/assets/location-detail.jpg";
+import teamGabriela from "@/assets/team-gabriela.jpg";
+import teamLuana from "@/assets/team-luana.jpg";
+import teamGiovanna from "@/assets/team-giovanna.jpg";
+import teamAnaCarolina from "@/assets/team-ana-carolina.jpg";
+import teamStephany from "@/assets/team-stephany.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 
@@ -170,6 +175,34 @@ const depoimentos = [
     name: "Júlia",
     bairro: "Centro de Santo André",
     text: "Tô com Invisalign e quase ninguém percebe. A avaliação gratuita me deu segurança pra começar.",
+  },
+];
+
+const team = [
+  {
+    img: teamGabriela,
+    name: "Dra. Gabriela Virgílio",
+    role: "Cirurgia Oral & Clínico Geral",
+  },
+  {
+    img: teamLuana,
+    name: "Dra. Luana Rodrigues",
+    role: "Estética & Clínico Geral",
+  },
+  {
+    img: teamGiovanna,
+    name: "Dra. Giovanna Spigolon",
+    role: "Ortodontista",
+  },
+  {
+    img: teamAnaCarolina,
+    name: "Dra. Ana Carolina",
+    role: "Protesista",
+  },
+  {
+    img: teamStephany,
+    name: "Stephany",
+    role: "Estagiária · Estudante de Odontologia",
   },
 ];
 
@@ -409,6 +442,49 @@ function Index() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Nossa Equipe */}
+      <section className="bg-espresso text-espresso-foreground">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
+          <div className="mb-12 text-center sm:mb-16">
+            <p className="eyebrow mb-4 sm:mb-5">Quem cuida de você</p>
+            <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
+              Conheça a nossa <em className="font-normal italic text-gold">equipe</em>
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-espresso-foreground/70 sm:mt-6 sm:text-lg">
+              Profissionais dedicadas a cuidar do seu sorriso com atenção, técnica e carinho.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-x-8 md:grid-cols-5">
+            {team.map((member) => (
+              <figure key={member.name} className="group text-center">
+                <div className="relative mx-auto aspect-square w-full max-w-[180px]">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 translate-x-2 translate-y-2 rounded-full border border-gold/60 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"
+                  />
+                  <div className="shadow-soft relative h-full w-full overflow-hidden rounded-full">
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      loading="lazy"
+                      width={360}
+                      height={360}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <figcaption className="mt-6">
+                  <h3 className="font-display text-lg font-medium leading-tight">{member.name}</h3>
+                  <p className="mt-1.5 text-[0.68rem] uppercase tracking-[0.18em] text-espresso-foreground/55">
+                    {member.role}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
