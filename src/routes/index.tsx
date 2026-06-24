@@ -5,7 +5,6 @@ import {
   CreditCard,
   CalendarCheck,
   MapPin,
-  Instagram,
   ArrowRight,
   Check,
   Quote,
@@ -20,20 +19,17 @@ import {
 import logoDark from "@/assets/unita-dark.png.asset.json";
 import logoLight from "@/assets/unita-light.png.asset.json";
 import heroSmile from "@/assets/hero-smile.jpg";
-import serviceFacetas from "@/assets/service-facetas.jpg";
-import serviceImplante from "@/assets/service-implante.jpg";
 import serviceInvisalign from "@/assets/service-invisalign.jpg";
 import clinicInterior from "@/assets/clinic-interior.jpg";
 import esteticaFacial from "@/assets/estetica-facial.jpg";
 import resultSmile from "@/assets/result-smile.jpg";
-import locationReception from "@/assets/location-reception.jpg";
-import locationRoom from "@/assets/location-room.jpg";
-import locationDetail from "@/assets/location-detail.jpg";
+import cafe from "@/assets/cafe.jpg";
 import teamGabriela from "@/assets/team-gabriela.jpg";
 import teamLuana from "@/assets/team-luana.jpg";
 import teamGiovanna from "@/assets/team-giovanna.jpg";
 import teamAnaCarolina from "@/assets/team-ana-carolina.jpg";
 import teamStephany from "@/assets/team-stephany.jpg";
+import teamGroup from "@/assets/team-group.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 
@@ -46,6 +42,9 @@ export const Route = createFileRoute("/")({
         content:
           "Atendimento humanizado, estética dental e facial. Facetas, clareamento, implantes e Invisalign. Avaliação gratuita em São Bernardo e Santo André.",
       },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "geo.region", content: "BR-SP" },
+      { name: "geo.placename", content: "São Bernardo do Campo, Santo André" },
       { property: "og:title", content: "Unità Odontologia & Estética | SBC e Santo André" },
       {
         property: "og:description",
@@ -54,6 +53,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "https://unitaodonto.lovable.app/" },
       { property: "og:image", content: heroSmile },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "901" },
+      { property: "og:image:alt", content: "Equipe da Unità Odontologia & Estética" },
       { name: "twitter:title", content: "Unità Odontologia & Estética" },
       { name: "twitter:description", content: "Avaliação gratuita, estética dental e facial em SBC e Santo André." },
       { name: "twitter:image", content: heroSmile },
@@ -84,7 +86,55 @@ export const Route = createFileRoute("/")({
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5",
-            reviewCount: "27",
+            reviewCount: "50",
+          },
+          review: [
+            {
+              "@type": "Review",
+              author: { "@type": "Person", name: "Thairine Sousa" },
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              reviewBody:
+                "Atendimento simplesmente impecável, as Dras são atenciosas, gentis e empáticas. Tenho pavor de dentista e fui tratada muito bem. A Dra Gabriela tem mãos de fada: anestesia leve e sem dor.",
+            },
+            {
+              "@type": "Review",
+              author: { "@type": "Person", name: "Larissa Nascimento" },
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              reviewBody:
+                "Fiz a retirada de um siso e um molar com a Dra Gabriela. Não senti dor alguma, ela me acalmou muito e explicou cada parte da cirurgia. Recomendo demais!",
+            },
+            {
+              "@type": "Review",
+              author: { "@type": "Person", name: "Luara Cerqueira Marques" },
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              reviewBody:
+                "Eu e toda a minha família somos pacientes. A Dra Luana é humana e sem pressa, e a Dra Gabriela fez um canal sem eu sentir um pingo de dor. Perdi até o medo de dentista!",
+            },
+          ],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Tratamentos",
+            itemListElement: [
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Facetas em Resina & Clareamento" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Implantes & Próteses" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Invisalign" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Estética Facial" } },
+            ],
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Unità Odontologia & Estética",
+          url: "https://unitaodonto.lovable.app/",
+          inLanguage: "pt-BR",
+          publisher: {
+            "@type": "Organization",
+            name: "Unità Odontologia & Estética",
+            url: "https://unitaodonto.lovable.app/",
           },
         }),
       },
@@ -121,22 +171,67 @@ function CTAButton({ children, variant = "dark" }: { children: React.ReactNode; 
   );
 }
 
+// Organic asymmetric shapes reused across the page for a soft, dynamic look
+const BLOB_A = "62% 38% 56% 44% / 60% 55% 45% 40%";
+const BLOB_B = "40% 60% 42% 58% / 56% 42% 58% 44%";
+const CORNER_A = "2.5rem 0.75rem 2.5rem 0.75rem";
+const CORNER_B = "0.75rem 2.5rem 0.75rem 2.5rem";
+
+function InstagramGlyph({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      role="img"
+      aria-label="Instagram"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="3.6" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+const marqueePhrases = [
+  "1ª consulta por nossa conta",
+  "Cartão & boleto",
+  "Preço que cabe",
+  "Atendimento com calma",
+];
+
+function MarqueeRow({ hidden }: { hidden?: boolean }) {
+  return (
+    <div
+      className="flex shrink-0 items-center gap-x-8 pl-8 sm:gap-x-12 sm:pl-12"
+      aria-hidden={hidden ? "true" : undefined}
+    >
+      {Array.from({ length: 4 }).flatMap((_, r) =>
+        marqueePhrases.map((label) => (
+          <span key={`${r}-${label}`} className="flex shrink-0 items-center gap-x-8 sm:gap-x-12">
+            {label}
+            <span className="text-gold">✦</span>
+          </span>
+        )),
+      )}
+    </div>
+  );
+}
+
 const services = [
   {
-    img: serviceFacetas,
+    img: resultSmile,
     num: "01",
     title: "Facetas em Resina & Clareamento",
     text: "Pra quem quer um sorriso mais bonito sem perder o ar de natural. Avaliamos com calma o que faz mais sentido pra você.",
   },
   {
-    img: serviceImplante,
-    num: "02",
-    title: "Implantes & Próteses",
-    text: "Pra voltar a mastigar bem e sorrir sem se preocupar. Planejamento certinho e materiais de qualidade.",
-  },
-  {
     img: serviceInvisalign,
-    num: "03",
+    num: "02",
     title: "Invisalign®",
     text: "Alinhador transparente, sem aquele aparelho fixo. Discreto, confortável e cabe na sua rotina.",
   },
@@ -162,19 +257,28 @@ const steps = [
 
 const depoimentos = [
   {
-    name: "Mariana",
-    bairro: "Jardins",
-    text: "Fiz as facetas e o clareamento. Ficou natural do jeito que eu queria e me trataram super bem.",
+    name: "Thairine Sousa",
+    text: "Atendimento simplesmente impecável, as Dras são atenciosas, gentis e empáticas. Tenho pavor de dentista e fui tratada muito bem. A Dra Gabriela tem mãos de fada: anestesia leve e sem dor. Super recomendo!",
   },
   {
-    name: "Carlos",
-    bairro: "Centro de SBC",
-    text: "Meu implante coube no bolso e a equipe explicou tudo com calma. Recomendo sem pensar.",
+    name: "Larissa Nascimento",
+    text: "Fiz a retirada de um siso e um molar com a Dra Gabriela. Não senti dor alguma, ela me acalmou muito e explicou cada parte da cirurgia. Recomendo demais, excelente atendimento!",
   },
   {
-    name: "Júlia",
-    bairro: "Centro de Santo André",
-    text: "Tô com Invisalign e quase ninguém percebe. A avaliação gratuita me deu segurança pra começar.",
+    name: "Luara Cerqueira Marques",
+    text: "Eu e toda a minha família somos pacientes. A Dra Luana é humana e sem pressa, e a Dra Gabriela fez um canal sem eu sentir um pingo de dor. Perdi até o medo de dentista!",
+  },
+  {
+    name: "Sabrina Romão",
+    text: "Clínica muito limpa e organizada. Fui atendida pela Dra Luana Rodrigues, super atenciosa, e voltei para uma aplicação de botox, que foi bem tranquila e sem dor!",
+  },
+  {
+    name: "Lais Estevam",
+    text: "Meus dentes estavam muito amarelados e agora parecem lente de contato. Obrigada, meninas, principalmente a Dra Luana que me atendeu!",
+  },
+  {
+    name: "Silvia Virgílio",
+    text: "Desde o primeiro atendimento até o cafezinho, amei a clínica. Apesar do meu medo de dentista, as doutoras me deixam tranquila. Meus filhos fazem ortodontia e já vemos resultados. Super recomendo!",
   },
 ];
 
@@ -242,14 +346,14 @@ function Index() {
             rel="noreferrer"
             className="hidden items-center gap-2 text-[0.72rem] uppercase tracking-[0.28em] text-muted-foreground transition-colors hover:text-foreground sm:flex"
           >
-            <Instagram className="h-4 w-4" /> @odontounita
+            <InstagramGlyph className="h-4 w-4" /> @odontounita
           </a>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-hero relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-20 pt-28 sm:gap-12 sm:px-6 sm:pb-24 sm:pt-32 md:grid-cols-2 md:pb-20 md:pt-32 lg:pb-24">
+      <section className="bg-gradient-hero relative flex min-h-[100svh] items-center overflow-hidden">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-20 pt-28 sm:gap-12 sm:px-6 sm:pb-24 sm:pt-32 md:grid-cols-2 md:pb-20 md:pt-32 lg:pb-24">
           <div className="animate-fade-up">
             <p className="eyebrow mb-4 sm:mb-6">Odontologia & Estética · ABC Paulista</p>
             <h1 className="font-display text-4xl font-light leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
@@ -286,10 +390,10 @@ function Index() {
               >
                 <img
                   src={heroSmile}
-                  alt="Paciente sorrindo após tratamento estético na Unità"
+                  alt="Equipe da Unità Odontologia & Estética na recepção da clínica"
                   className="h-full w-full object-cover"
-                  width={1024}
-                  height={1280}
+                  width={1200}
+                  height={901}
                   fetchPriority="high"
                 />
               </div>
@@ -304,27 +408,17 @@ function Index() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Marquee strip */}
-      <div className="group relative overflow-hidden border-y border-border bg-espresso py-4">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-espresso to-transparent sm:w-16" aria-hidden="true" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-espresso to-transparent sm:w-16" aria-hidden="true" />
-        <div className="flex w-max animate-marquee items-center gap-x-8 text-[0.62rem] uppercase tracking-[0.22em] text-espresso-foreground/80 sm:gap-x-12 sm:text-[0.7rem] sm:tracking-[0.3em] group-hover:[animation-play-state:paused]">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex shrink-0 items-center gap-x-8 sm:gap-x-12" aria-hidden={i === 1 ? "true" : undefined}>
-              <span>1ª consulta por nossa conta</span>
-              <span className="text-gold">✦</span>
-              <span>Cartão & boleto</span>
-              <span className="text-gold">✦</span>
-              <span>Preço que cabe</span>
-              <span className="text-gold">✦</span>
-              <span>Atendimento com calma</span>
-              <span className="text-gold">✦</span>
-            </div>
-          ))}
+        {/* Marquee strip pinned to the bottom of the hero */}
+        <div className="group absolute inset-x-0 bottom-0 z-10 overflow-hidden border-t border-espresso-foreground/10 bg-espresso py-3 sm:py-4">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-espresso to-transparent sm:w-16" aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-espresso to-transparent sm:w-16" aria-hidden="true" />
+          <div className="flex w-max animate-marquee items-center text-[0.62rem] uppercase tracking-[0.22em] text-espresso-foreground/80 sm:text-[0.7rem] sm:tracking-[0.3em] group-hover:[animation-play-state:paused]">
+            <MarqueeRow />
+            <MarqueeRow hidden />
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Services */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
@@ -334,18 +428,28 @@ function Index() {
             Tratamentos pensados pra ficar <em className="font-normal italic text-gold">natural</em>
           </h2>
         </div>
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
-          {services.map((s) => (
+        <div className="grid gap-10 sm:grid-cols-2">
+          {services.map((s, i) => (
             <article key={s.num} className="group">
-              <div className="shadow-card overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  width={896}
-                  height={704}
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              <div className="relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-2 translate-y-2 border border-gold/40 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"
+                  style={{ borderRadius: i % 2 === 0 ? CORNER_A : CORNER_B }}
                 />
+                <div
+                  className="shadow-card relative overflow-hidden"
+                  style={{ borderRadius: i % 2 === 0 ? CORNER_A : CORNER_B }}
+                >
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    loading="lazy"
+                    width={896}
+                    height={1120}
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
               </div>
               <p className="mt-7 font-display text-sm italic text-gold">{s.num}</p>
               <h3 className="mt-2 font-display text-2xl font-medium">{s.title}</h3>
@@ -377,15 +481,23 @@ function Index() {
               <CTAButton variant="light">Bora conversar</CTAButton>
             </div>
           </div>
-          <div className="shadow-soft overflow-hidden rounded-t-full">
-            <img
-              src={esteticaFacial}
-              alt="Sala de estética facial da Unità"
-              loading="lazy"
-              width={896}
-              height={1120}
-              className="h-full w-full object-cover"
+          <div className="relative mx-auto w-full max-w-sm md:max-w-none">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -translate-x-3 translate-y-3 border border-gold/50"
+              style={{ borderRadius: BLOB_B }}
             />
+            <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: BLOB_B }}>
+              <img
+                src={esteticaFacial}
+                alt="Profissional da Unità realizando procedimento de estética facial"
+                loading="lazy"
+                width={900}
+                height={1200}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <span className="absolute -left-2 top-6 hidden font-display text-3xl text-gold md:block" aria-hidden="true">✦</span>
           </div>
         </div>
       </section>
@@ -393,15 +505,22 @@ function Index() {
       {/* Humanized care */}
       <section className="bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-2 md:py-32">
-          <div className="shadow-soft overflow-hidden">
-            <img
-              src={clinicInterior}
-              alt="Ambiente acolhedor da clínica Unità"
-              loading="lazy"
-              width={1280}
-              height={896}
-              className="h-full w-full object-cover"
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -translate-x-3 translate-y-3 border border-gold/50"
+              style={{ borderRadius: CORNER_B }}
             />
+            <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: CORNER_B }}>
+              <img
+                src={teamGroup}
+                alt="Equipe da Unità reunida na recepção da clínica"
+                loading="lazy"
+                width={1200}
+                height={901}
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
           <div>
             <p className="eyebrow mb-4 sm:mb-5">Por que a Unità</p>
@@ -459,25 +578,29 @@ function Index() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-x-8 md:grid-cols-5">
-            {team.map((member) => (
+            {team.map((member, i) => (
               <figure key={member.name} className="group text-center">
-                <div className="relative mx-auto aspect-square w-full max-w-[180px]">
+                <div className="relative mx-auto w-full max-w-[210px]">
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 translate-x-2 translate-y-2 rounded-full border border-gold/60 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"
+                    className="absolute inset-0 translate-x-1.5 translate-y-1.5 border border-gold/50 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"
+                    style={{ borderRadius: i % 2 === 0 ? CORNER_A : CORNER_B }}
                   />
-                  <div className="shadow-soft relative h-full w-full overflow-hidden rounded-full">
+                  <div
+                    className="shadow-soft relative overflow-hidden"
+                    style={{ borderRadius: i % 2 === 0 ? CORNER_A : CORNER_B }}
+                  >
                     <img
                       src={member.img}
                       alt={member.name}
                       loading="lazy"
-                      width={360}
-                      height={360}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      width={420}
+                      height={525}
+                      className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                 </div>
-                <figcaption className="mt-6">
+                <figcaption className="mt-5">
                   <h3 className="font-display text-lg font-medium leading-tight">{member.name}</h3>
                   <p className="mt-1.5 text-[0.68rem] uppercase tracking-[0.18em] text-espresso-foreground/55">
                     {member.role}
@@ -534,7 +657,10 @@ function Index() {
                 </blockquote>
                 <figcaption className="mt-7 border-t border-border pt-5">
                   <p className="font-display text-lg font-medium">{d.name}</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{d.bairro}</p>
+                  <p className="mt-1.5 flex items-center gap-2 text-[0.62rem] uppercase tracking-[0.2em] text-muted-foreground">
+                    <span className="text-sm tracking-normal text-gold" aria-label="5 estrelas">★★★★★</span>
+                    Avaliação no Google
+                  </p>
                 </figcaption>
               </figure>
             ))}
@@ -543,35 +669,43 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto grid max-w-6xl items-start gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-[1fr_1.2fr] md:py-32">
+      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-[1.15fr_0.85fr] md:py-32">
         <div>
           <p className="eyebrow mb-4 sm:mb-5">Perguntas que sempre rolam</p>
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Tá com <em className="font-normal italic text-gold">dúvida?</em> A gente responde.
           </h2>
-          <div className="shadow-soft mt-10 hidden overflow-hidden rounded-t-full md:block md:max-w-xs">
+          <Accordion type="single" collapsible className="mt-8 w-full sm:mt-10">
+            {faqs.map((f) => (
+              <AccordionItem key={f.q} value={f.q} className="border-border">
+                <AccordionTrigger className="py-5 text-left font-display text-lg font-medium hover:no-underline sm:py-6 sm:text-xl">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+        <div className="relative mx-auto hidden w-full max-w-sm md:block">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 translate-x-3 translate-y-3 border border-gold/50"
+            style={{ borderRadius: BLOB_A }}
+          />
+          <div className="shadow-soft relative aspect-[4/5] overflow-hidden" style={{ borderRadius: BLOB_A }}>
             <img
-              src={resultSmile}
-              alt="Sorriso radiante de paciente Unità"
+              src={cafe}
+              alt="Cafézinho servido na Unità, com a xícara da marca"
               loading="lazy"
-              width={896}
-              height={704}
+              width={901}
+              height={1200}
               className="h-full w-full object-cover"
             />
           </div>
+          <span className="absolute -right-3 -top-3 font-display text-2xl text-gold" aria-hidden="true">✦</span>
         </div>
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((f) => (
-            <AccordionItem key={f.q} value={f.q} className="border-border">
-              <AccordionTrigger className="py-5 text-left font-display text-lg font-medium hover:no-underline sm:py-6 sm:text-xl">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
       </section>
 
       {/* Location */}
@@ -601,35 +735,20 @@ function Index() {
               ABC Paulista · SBC & Santo André
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="shadow-card col-span-2 overflow-hidden">
+          <div className="group relative">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 translate-x-3 translate-y-3 border border-gold/50"
+              style={{ borderRadius: CORNER_A }}
+            />
+            <div className="shadow-card relative overflow-hidden" style={{ borderRadius: CORNER_A }}>
               <img
-                src={locationReception}
+                src={clinicInterior}
                 alt="Recepção da clínica Unità"
                 loading="lazy"
-                width={1024}
-                height={720}
-                className="aspect-[16/10] w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-            <div className="shadow-card overflow-hidden">
-              <img
-                src={locationDetail}
-                alt="Detalhe acolhedor da sala de espera"
-                loading="lazy"
-                width={1024}
-                height={1024}
-                className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-            <div className="shadow-card overflow-hidden">
-              <img
-                src={locationRoom}
-                alt="Sala clínica iluminada por luz natural"
-                loading="lazy"
-                width={1024}
-                height={1024}
-                className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105"
+                width={1200}
+                height={750}
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           </div>
@@ -669,7 +788,7 @@ function Index() {
             rel="noreferrer"
             className="flex items-center gap-2 transition-colors hover:text-espresso-foreground"
           >
-            <Instagram className="h-4 w-4" /> @odontounita
+            <InstagramGlyph className="h-4 w-4" /> @odontounita
           </a>
         </div>
       </footer>
