@@ -87,8 +87,31 @@ export const Route = createFileRoute("/")({
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5",
-            reviewCount: "27",
+            reviewCount: "50",
           },
+          review: [
+            {
+              "@type": "Review",
+              author: { "@type": "Person", name: "Thairine Sousa" },
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              reviewBody:
+                "Atendimento simplesmente impecável, as Dras são atenciosas, gentis e empáticas. Tenho pavor de dentista e fui tratada muito bem. A Dra Gabriela tem mãos de fada: anestesia leve e sem dor.",
+            },
+            {
+              "@type": "Review",
+              author: { "@type": "Person", name: "Larissa Nascimento" },
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              reviewBody:
+                "Fiz a retirada de um siso e um molar com a Dra Gabriela. Não senti dor alguma, ela me acalmou muito e explicou cada parte da cirurgia. Recomendo demais!",
+            },
+            {
+              "@type": "Review",
+              author: { "@type": "Person", name: "Luara Cerqueira Marques" },
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              reviewBody:
+                "Eu e toda a minha família somos pacientes. A Dra Luana é humana e sem pressa, e a Dra Gabriela fez um canal sem eu sentir um pingo de dor. Perdi até o medo de dentista!",
+            },
+          ],
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Tratamentos",
@@ -216,19 +239,28 @@ const steps = [
 
 const depoimentos = [
   {
-    name: "Mariana",
-    bairro: "Jardins",
-    text: "Fiz as facetas e o clareamento. Ficou natural do jeito que eu queria e me trataram super bem.",
+    name: "Thairine Sousa",
+    text: "Atendimento simplesmente impecável, as Dras são atenciosas, gentis e empáticas. Tenho pavor de dentista e fui tratada muito bem. A Dra Gabriela tem mãos de fada: anestesia leve e sem dor. Super recomendo!",
   },
   {
-    name: "Carlos",
-    bairro: "Centro de SBC",
-    text: "Meu implante coube no bolso e a equipe explicou tudo com calma. Recomendo sem pensar.",
+    name: "Larissa Nascimento",
+    text: "Fiz a retirada de um siso e um molar com a Dra Gabriela. Não senti dor alguma, ela me acalmou muito e explicou cada parte da cirurgia. Recomendo demais, excelente atendimento!",
   },
   {
-    name: "Júlia",
-    bairro: "Centro de Santo André",
-    text: "Tô com Invisalign e quase ninguém percebe. A avaliação gratuita me deu segurança pra começar.",
+    name: "Luara Cerqueira Marques",
+    text: "Eu e toda a minha família somos pacientes. A Dra Luana é humana e sem pressa, e a Dra Gabriela fez um canal sem eu sentir um pingo de dor. Perdi até o medo de dentista!",
+  },
+  {
+    name: "Sabrina Romão",
+    text: "Clínica muito limpa e organizada. Fui atendida pela Dra Luana Rodrigues, super atenciosa, e voltei para uma aplicação de botox, que foi bem tranquila e sem dor!",
+  },
+  {
+    name: "Lais Estevam",
+    text: "Meus dentes estavam muito amarelados e agora parecem lente de contato. Obrigada, meninas, principalmente a Dra Luana que me atendeu!",
+  },
+  {
+    name: "Silvia Virgílio",
+    text: "Desde o primeiro atendimento até o cafezinho, amei a clínica. Apesar do meu medo de dentista, as doutoras me deixam tranquila. Meus filhos fazem ortodontia e já vemos resultados. Super recomendo!",
   },
 ];
 
@@ -617,7 +649,10 @@ function Index() {
                 </blockquote>
                 <figcaption className="mt-7 border-t border-border pt-5">
                   <p className="font-display text-lg font-medium">{d.name}</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{d.bairro}</p>
+                  <p className="mt-1.5 flex items-center gap-2 text-[0.62rem] uppercase tracking-[0.2em] text-muted-foreground">
+                    <span className="text-sm tracking-normal text-gold" aria-label="5 estrelas">★★★★★</span>
+                    Avaliação no Google
+                  </p>
                 </figcaption>
               </figure>
             ))}
