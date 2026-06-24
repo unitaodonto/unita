@@ -21,7 +21,7 @@ import logoLight from "@/assets/unita-light.png.asset.json";
 import heroSmile from "@/assets/hero-smile.jpg";
 import serviceInvisalign from "@/assets/service-invisalign.jpg";
 import clinicInterior from "@/assets/clinic-interior.jpg";
-import implante from "@/assets/service-implante.jpg";
+import esteticaFacial from "@/assets/estetica-facial.jpg";
 import resultSmile from "@/assets/result-smile.jpg";
 import cafe from "@/assets/cafe.jpg";
 import teamGabriela from "@/assets/team-gabriela.jpg";
@@ -29,7 +29,7 @@ import teamLuana from "@/assets/team-luana.jpg";
 import teamGiovanna from "@/assets/team-giovanna.jpg";
 import teamAnaCarolina from "@/assets/team-ana-carolina.jpg";
 import teamStephany from "@/assets/team-stephany.jpg";
-import teamGroup from "@/assets/team-group.jpg";
+import implante from "@/assets/service-implante.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 
@@ -489,8 +489,8 @@ function Index() {
             />
             <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: BLOB_B }}>
               <img
-                src={implante}
-                alt="Profissional da Unità preparando o material com cuidado durante atendimento"
+                src={esteticaFacial}
+                alt="Profissional da Unità realizando procedimento de estética facial"
                 loading="lazy"
                 width={900}
                 height={1200}
@@ -513,8 +513,8 @@ function Index() {
             />
             <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: CORNER_B }}>
               <img
-                src={teamGroup}
-                alt="Equipe da Unità reunida na recepção da clínica"
+                src={implante}
+                alt="Profissional da Unità preparando o material com cuidado durante o atendimento"
                 loading="lazy"
                 width={1200}
                 height={901}
