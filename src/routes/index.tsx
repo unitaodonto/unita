@@ -19,7 +19,6 @@ import {
 import logoDark from "@/assets/unita-dark.png.asset.json";
 import logoLight from "@/assets/unita-light.png.asset.json";
 import heroSmile from "@/assets/hero-smile.jpg";
-import serviceImplante from "@/assets/service-implante.jpg";
 import serviceInvisalign from "@/assets/service-invisalign.jpg";
 import clinicInterior from "@/assets/clinic-interior.jpg";
 import esteticaFacial from "@/assets/estetica-facial.jpg";
@@ -231,14 +230,8 @@ const services = [
     text: "Pra quem quer um sorriso mais bonito sem perder o ar de natural. Avaliamos com calma o que faz mais sentido pra você.",
   },
   {
-    img: serviceImplante,
-    num: "02",
-    title: "Implantes & Próteses",
-    text: "Pra voltar a mastigar bem e sorrir sem se preocupar. Planejamento certinho e materiais de qualidade.",
-  },
-  {
     img: serviceInvisalign,
-    num: "03",
+    num: "02",
     title: "Invisalign®",
     text: "Alinhador transparente, sem aquele aparelho fixo. Discreto, confortável e cabe na sua rotina.",
   },
@@ -435,7 +428,7 @@ function Index() {
             Tratamentos pensados pra ficar <em className="font-normal italic text-gold">natural</em>
           </h2>
         </div>
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2">
           {services.map((s, i) => (
             <article key={s.num} className="group">
               <div className="relative">
