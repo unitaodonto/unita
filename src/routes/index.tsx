@@ -286,10 +286,10 @@ function Index() {
               >
                 <img
                   src={heroSmile}
-                  alt="Paciente sorrindo após tratamento estético na Unità"
+                  alt="Equipe da Unità Odontologia & Estética na recepção da clínica"
                   className="h-full w-full object-cover"
-                  width={1024}
-                  height={1280}
+                  width={1200}
+                  height={901}
                   fetchPriority="high"
                 />
               </div>
