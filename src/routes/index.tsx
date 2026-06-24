@@ -21,7 +21,7 @@ import logoLight from "@/assets/unita-light.png.asset.json";
 import heroSmile from "@/assets/hero-smile.jpg";
 import serviceInvisalign from "@/assets/service-invisalign.jpg";
 import clinicInterior from "@/assets/clinic-interior.jpg";
-import esteticaFacial from "@/assets/estetica-facial.jpg";
+import implante from "@/assets/service-implante.jpg";
 import resultSmile from "@/assets/result-smile.jpg";
 import cafe from "@/assets/cafe.jpg";
 import teamGabriela from "@/assets/team-gabriela.jpg";
@@ -489,8 +489,8 @@ function Index() {
             />
             <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: BLOB_B }}>
               <img
-                src={esteticaFacial}
-                alt="Profissional da Unità realizando procedimento de estética facial"
+                src={implante}
+                alt="Profissional da Unità preparando o material com cuidado durante atendimento"
                 loading="lazy"
                 width={900}
                 height={1200}
