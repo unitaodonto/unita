@@ -180,21 +180,46 @@ const CORNER_B = "0.75rem 2.5rem 0.75rem 2.5rem";
 
 function InstagramGlyph({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} role="img" aria-label="Instagram">
-      <defs>
-        <radialGradient id="ig-gradient" cx="30%" cy="107%" r="135%">
-          <stop offset="0%" stopColor="#fdf497" />
-          <stop offset="8%" stopColor="#fdf497" />
-          <stop offset="45%" stopColor="#fd5949" />
-          <stop offset="60%" stopColor="#d6249f" />
-          <stop offset="90%" stopColor="#285aeb" />
-        </radialGradient>
-      </defs>
-      <path
-        fill="url(#ig-gradient)"
-        d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.95c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07Zm0 3.32a4.57 4.57 0 1 1 0 9.14 4.57 4.57 0 0 1 0-9.14Zm0 7.54a2.97 2.97 0 1 0 0-5.94 2.97 2.97 0 0 0 0 5.94Zm5.83-7.74a1.07 1.07 0 1 1-2.14 0 1.07 1.07 0 0 1 2.14 0Z"
-      />
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      role="img"
+      aria-label="Instagram"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="3.6" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
     </svg>
+  );
+}
+
+const marqueePhrases = [
+  "1ª consulta por nossa conta",
+  "Cartão & boleto",
+  "Preço que cabe",
+  "Atendimento com calma",
+];
+
+function MarqueeRow({ hidden }: { hidden?: boolean }) {
+  return (
+    <div
+      className="flex shrink-0 items-center gap-x-8 pl-8 sm:gap-x-12 sm:pl-12"
+      aria-hidden={hidden ? "true" : undefined}
+    >
+      {Array.from({ length: 4 }).flatMap((_, r) =>
+        marqueePhrases.map((label) => (
+          <span key={`${r}-${label}`} className="flex shrink-0 items-center gap-x-8 sm:gap-x-12">
+            {label}
+            <span className="text-gold">✦</span>
+          </span>
+        )),
+      )}
+    </div>
   );
 }
 
@@ -390,27 +415,17 @@ function Index() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Marquee strip */}
-      <div className="group relative overflow-hidden border-y border-border bg-espresso py-4">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-espresso to-transparent sm:w-16" aria-hidden="true" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-espresso to-transparent sm:w-16" aria-hidden="true" />
-        <div className="flex w-max animate-marquee items-center gap-x-8 text-[0.62rem] uppercase tracking-[0.22em] text-espresso-foreground/80 sm:gap-x-12 sm:text-[0.7rem] sm:tracking-[0.3em] group-hover:[animation-play-state:paused]">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex shrink-0 items-center gap-x-8 sm:gap-x-12" aria-hidden={i === 1 ? "true" : undefined}>
-              <span>1ª consulta por nossa conta</span>
-              <span className="text-gold">✦</span>
-              <span>Cartão & boleto</span>
-              <span className="text-gold">✦</span>
-              <span>Preço que cabe</span>
-              <span className="text-gold">✦</span>
-              <span>Atendimento com calma</span>
-              <span className="text-gold">✦</span>
-            </div>
-          ))}
+        {/* Marquee strip pinned to the bottom of the hero */}
+        <div className="group absolute inset-x-0 bottom-0 z-10 overflow-hidden border-t border-espresso-foreground/10 bg-espresso py-3 sm:py-4">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-espresso to-transparent sm:w-16" aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-espresso to-transparent sm:w-16" aria-hidden="true" />
+          <div className="flex w-max animate-marquee items-center text-[0.62rem] uppercase tracking-[0.22em] text-espresso-foreground/80 sm:text-[0.7rem] sm:tracking-[0.3em] group-hover:[animation-play-state:paused]">
+            <MarqueeRow />
+            <MarqueeRow hidden />
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Services */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
@@ -661,43 +676,43 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto grid max-w-6xl items-start gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-[1fr_1.2fr] md:py-32">
+      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-[1.15fr_0.85fr] md:py-32">
         <div>
           <p className="eyebrow mb-4 sm:mb-5">Perguntas que sempre rolam</p>
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Tá com <em className="font-normal italic text-gold">dúvida?</em> A gente responde.
           </h2>
-          <div className="relative mt-8 hidden w-full md:block md:max-w-[16rem]">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 translate-x-3 translate-y-3 border border-gold/50"
-              style={{ borderRadius: BLOB_A }}
-            />
-            <div className="shadow-soft relative aspect-[4/5] overflow-hidden" style={{ borderRadius: BLOB_A }}>
-              <img
-                src={cafe}
-                alt="Cafézinho servido na Unità, com a xícara da marca"
-                loading="lazy"
-                width={901}
-                height={1200}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <span className="absolute -right-3 -top-3 font-display text-2xl text-gold" aria-hidden="true">✦</span>
-          </div>
+          <Accordion type="single" collapsible className="mt-8 w-full sm:mt-10">
+            {faqs.map((f) => (
+              <AccordionItem key={f.q} value={f.q} className="border-border">
+                <AccordionTrigger className="py-5 text-left font-display text-lg font-medium hover:no-underline sm:py-6 sm:text-xl">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-        <Accordion type="single" collapsible className="w-full md:self-center">
-          {faqs.map((f) => (
-            <AccordionItem key={f.q} value={f.q} className="border-border">
-              <AccordionTrigger className="py-5 text-left font-display text-lg font-medium hover:no-underline sm:py-6 sm:text-xl">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="relative mx-auto hidden w-full max-w-sm md:block">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 translate-x-3 translate-y-3 border border-gold/50"
+            style={{ borderRadius: BLOB_A }}
+          />
+          <div className="shadow-soft relative aspect-[4/5] overflow-hidden" style={{ borderRadius: BLOB_A }}>
+            <img
+              src={cafe}
+              alt="Cafézinho servido na Unità, com a xícara da marca"
+              loading="lazy"
+              width={901}
+              height={1200}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <span className="absolute -right-3 -top-3 font-display text-2xl text-gold" aria-hidden="true">✦</span>
+        </div>
       </section>
 
       {/* Location */}
