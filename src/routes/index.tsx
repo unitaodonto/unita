@@ -446,8 +446,8 @@ function Index() {
                     alt={s.title}
                     loading="lazy"
                     width={896}
-                    height={1120}
-                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    height={672}
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               </div>
