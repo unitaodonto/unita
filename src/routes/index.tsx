@@ -29,7 +29,7 @@ import teamLuana from "@/assets/team-luana.jpg";
 import teamGiovanna from "@/assets/team-giovanna.jpg";
 import teamAnaCarolina from "@/assets/team-ana-carolina.jpg";
 import teamStephany from "@/assets/team-stephany.jpg";
-import teamGroup from "@/assets/team-group.jpg";
+import implante from "@/assets/service-implante.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 
@@ -513,8 +513,8 @@ function Index() {
             />
             <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: CORNER_B }}>
               <img
-                src={teamGroup}
-                alt="Equipe da Unità reunida na recepção da clínica"
+                src={implante}
+                alt="Profissional da Unità preparando o material com cuidado durante o atendimento"
                 loading="lazy"
                 width={1200}
                 height={901}
