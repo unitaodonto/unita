@@ -667,13 +667,13 @@ function Index() {
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Tá com <em className="font-normal italic text-gold">dúvida?</em> A gente responde.
           </h2>
-          <div className="relative mt-10 hidden md:block md:max-w-[18rem]">
+          <div className="relative mt-8 hidden w-full md:block md:max-w-[16rem]">
             <div
               aria-hidden="true"
-              className="absolute inset-0 -translate-x-3 translate-y-3 border border-gold/50"
+              className="absolute inset-0 translate-x-3 translate-y-3 border border-gold/50"
               style={{ borderRadius: BLOB_A }}
             />
-            <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: BLOB_A }}>
+            <div className="shadow-soft relative aspect-[4/5] overflow-hidden" style={{ borderRadius: BLOB_A }}>
               <img
                 src={cafe}
                 alt="Cafézinho servido na Unità, com a xícara da marca"
@@ -683,10 +683,10 @@ function Index() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <span className="absolute -right-2 -top-3 font-display text-2xl text-gold" aria-hidden="true">✦</span>
+            <span className="absolute -right-3 -top-3 font-display text-2xl text-gold" aria-hidden="true">✦</span>
           </div>
         </div>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full md:self-center">
           {faqs.map((f) => (
             <AccordionItem key={f.q} value={f.q} className="border-border">
               <AccordionTrigger className="py-5 text-left font-display text-lg font-medium hover:no-underline sm:py-6 sm:text-xl">
