@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://unitaodonto.lovable.app/sitemap.xml

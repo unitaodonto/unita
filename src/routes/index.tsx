@@ -5,7 +5,6 @@ import {
   CreditCard,
   CalendarCheck,
   MapPin,
-  Instagram,
   ArrowRight,
   Check,
   Quote,
@@ -44,6 +43,9 @@ export const Route = createFileRoute("/")({
         content:
           "Atendimento humanizado, estética dental e facial. Facetas, clareamento, implantes e Invisalign. Avaliação gratuita em São Bernardo e Santo André.",
       },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "geo.region", content: "BR-SP" },
+      { name: "geo.placename", content: "São Bernardo do Campo, Santo André" },
       { property: "og:title", content: "Unità Odontologia & Estética | SBC e Santo André" },
       {
         property: "og:description",
@@ -52,6 +54,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "https://unitaodonto.lovable.app/" },
       { property: "og:image", content: heroSmile },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "901" },
+      { property: "og:image:alt", content: "Equipe da Unità Odontologia & Estética" },
       { name: "twitter:title", content: "Unità Odontologia & Estética" },
       { name: "twitter:description", content: "Avaliação gratuita, estética dental e facial em SBC e Santo André." },
       { name: "twitter:image", content: heroSmile },
@@ -83,6 +88,31 @@ export const Route = createFileRoute("/")({
             "@type": "AggregateRating",
             ratingValue: "5",
             reviewCount: "27",
+          },
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Tratamentos",
+            itemListElement: [
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Facetas em Resina & Clareamento" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Implantes & Próteses" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Invisalign" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Estética Facial" } },
+            ],
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Unità Odontologia & Estética",
+          url: "https://unitaodonto.lovable.app/",
+          inLanguage: "pt-BR",
+          publisher: {
+            "@type": "Organization",
+            name: "Unità Odontologia & Estética",
+            url: "https://unitaodonto.lovable.app/",
           },
         }),
       },
@@ -116,6 +146,32 @@ function CTAButton({ children, variant = "dark" }: { children: React.ReactNode; 
       <span className="relative z-10">{children}</span>
       <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1.5" />
     </a>
+  );
+}
+
+// Organic asymmetric shapes reused across the page for a soft, dynamic look
+const BLOB_A = "62% 38% 56% 44% / 60% 55% 45% 40%";
+const BLOB_B = "40% 60% 42% 58% / 56% 42% 58% 44%";
+const CORNER_A = "2.5rem 0.75rem 2.5rem 0.75rem";
+const CORNER_B = "0.75rem 2.5rem 0.75rem 2.5rem";
+
+function InstagramGlyph({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} role="img" aria-label="Instagram">
+      <defs>
+        <radialGradient id="ig-gradient" cx="30%" cy="107%" r="135%">
+          <stop offset="0%" stopColor="#fdf497" />
+          <stop offset="8%" stopColor="#fdf497" />
+          <stop offset="45%" stopColor="#fd5949" />
+          <stop offset="60%" stopColor="#d6249f" />
+          <stop offset="90%" stopColor="#285aeb" />
+        </radialGradient>
+      </defs>
+      <path
+        fill="url(#ig-gradient)"
+        d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.95c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07Zm0 3.32a4.57 4.57 0 1 1 0 9.14 4.57 4.57 0 0 1 0-9.14Zm0 7.54a2.97 2.97 0 1 0 0-5.94 2.97 2.97 0 0 0 0 5.94Zm5.83-7.74a1.07 1.07 0 1 1-2.14 0 1.07 1.07 0 0 1 2.14 0Z"
+      />
+    </svg>
   );
 }
 
@@ -240,14 +296,14 @@ function Index() {
             rel="noreferrer"
             className="hidden items-center gap-2 text-[0.72rem] uppercase tracking-[0.28em] text-muted-foreground transition-colors hover:text-foreground sm:flex"
           >
-            <Instagram className="h-4 w-4" /> @odontounita
+            <InstagramGlyph className="h-4 w-4" /> @odontounita
           </a>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-hero relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-20 pt-28 sm:gap-12 sm:px-6 sm:pb-24 sm:pt-32 md:grid-cols-2 md:pb-20 md:pt-32 lg:pb-24">
+      <section className="bg-gradient-hero relative flex min-h-[100svh] items-center overflow-hidden">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-20 pt-28 sm:gap-12 sm:px-6 sm:pb-24 sm:pt-32 md:grid-cols-2 md:pb-20 md:pt-32 lg:pb-24">
           <div className="animate-fade-up">
             <p className="eyebrow mb-4 sm:mb-6">Odontologia & Estética · ABC Paulista</p>
             <h1 className="font-display text-4xl font-light leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
@@ -333,17 +389,27 @@ function Index() {
           </h2>
         </div>
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
-          {services.map((s) => (
+          {services.map((s, i) => (
             <article key={s.num} className="group">
-              <div className="shadow-card overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  width={896}
-                  height={704}
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              <div className="relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-2 translate-y-2 border border-gold/40 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"
+                  style={{ borderRadius: i % 2 === 0 ? CORNER_A : CORNER_B }}
                 />
+                <div
+                  className="shadow-card relative overflow-hidden"
+                  style={{ borderRadius: i % 2 === 0 ? CORNER_A : CORNER_B }}
+                >
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    loading="lazy"
+                    width={896}
+                    height={1120}
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
               </div>
               <p className="mt-7 font-display text-sm italic text-gold">{s.num}</p>
               <h3 className="mt-2 font-display text-2xl font-medium">{s.title}</h3>
@@ -375,15 +441,23 @@ function Index() {
               <CTAButton variant="light">Bora conversar</CTAButton>
             </div>
           </div>
-          <div className="shadow-soft overflow-hidden rounded-t-full">
-            <img
-              src={esteticaFacial}
-              alt="Sala de estética facial da Unità"
-              loading="lazy"
-              width={896}
-              height={1120}
-              className="h-full w-full object-cover"
+          <div className="relative mx-auto w-full max-w-sm md:max-w-none">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -translate-x-3 translate-y-3 border border-gold/50"
+              style={{ borderRadius: BLOB_B }}
             />
+            <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: BLOB_B }}>
+              <img
+                src={esteticaFacial}
+                alt="Profissional da Unità realizando procedimento de estética facial"
+                loading="lazy"
+                width={900}
+                height={1200}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <span className="absolute -left-2 top-6 hidden font-display text-3xl text-gold md:block" aria-hidden="true">✦</span>
           </div>
         </div>
       </section>
@@ -391,15 +465,22 @@ function Index() {
       {/* Humanized care */}
       <section className="bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-2 md:py-32">
-          <div className="shadow-soft overflow-hidden">
-            <img
-              src={teamGroup}
-              alt="Equipe da Unità reunida na recepção da clínica"
-              loading="lazy"
-              width={1200}
-              height={901}
-              className="h-full w-full object-cover"
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -translate-x-3 translate-y-3 border border-gold/50"
+              style={{ borderRadius: CORNER_B }}
             />
+            <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: CORNER_B }}>
+              <img
+                src={teamGroup}
+                alt="Equipe da Unità reunida na recepção da clínica"
+                loading="lazy"
+                width={1200}
+                height={901}
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
           <div>
             <p className="eyebrow mb-4 sm:mb-5">Por que a Unità</p>
@@ -457,25 +538,29 @@ function Index() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-x-8 md:grid-cols-5">
-            {team.map((member) => (
+            {team.map((member, i) => (
               <figure key={member.name} className="group text-center">
-                <div className="relative mx-auto aspect-square w-full max-w-[180px]">
+                <div className="relative mx-auto w-full max-w-[210px]">
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 translate-x-2 translate-y-2 rounded-full border border-gold/60 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"
+                    className="absolute inset-0 translate-x-1.5 translate-y-1.5 border border-gold/50 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"
+                    style={{ borderRadius: i % 2 === 0 ? CORNER_A : CORNER_B }}
                   />
-                  <div className="shadow-soft relative h-full w-full overflow-hidden rounded-full">
+                  <div
+                    className="shadow-soft relative overflow-hidden"
+                    style={{ borderRadius: i % 2 === 0 ? CORNER_A : CORNER_B }}
+                  >
                     <img
                       src={member.img}
                       alt={member.name}
                       loading="lazy"
-                      width={360}
-                      height={360}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      width={420}
+                      height={525}
+                      className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                 </div>
-                <figcaption className="mt-6">
+                <figcaption className="mt-5">
                   <h3 className="font-display text-lg font-medium leading-tight">{member.name}</h3>
                   <p className="mt-1.5 text-[0.68rem] uppercase tracking-[0.18em] text-espresso-foreground/55">
                     {member.role}
@@ -547,15 +632,23 @@ function Index() {
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Tá com <em className="font-normal italic text-gold">dúvida?</em> A gente responde.
           </h2>
-          <div className="shadow-soft mt-10 hidden overflow-hidden rounded-t-full md:block md:max-w-xs">
-            <img
-              src={cafe}
-              alt="Cafézinho servido na Unità, com a xícara da marca"
-              loading="lazy"
-              width={901}
-              height={1200}
-              className="h-full w-full object-cover"
+          <div className="relative mt-10 hidden md:block md:max-w-[18rem]">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -translate-x-3 translate-y-3 border border-gold/50"
+              style={{ borderRadius: BLOB_A }}
             />
+            <div className="shadow-soft relative overflow-hidden" style={{ borderRadius: BLOB_A }}>
+              <img
+                src={cafe}
+                alt="Cafézinho servido na Unità, com a xícara da marca"
+                loading="lazy"
+                width={901}
+                height={1200}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <span className="absolute -right-2 -top-3 font-display text-2xl text-gold" aria-hidden="true">✦</span>
           </div>
         </div>
         <Accordion type="single" collapsible className="w-full">
@@ -599,15 +692,22 @@ function Index() {
               ABC Paulista · SBC & Santo André
             </p>
           </div>
-          <div className="shadow-card overflow-hidden">
-            <img
-              src={clinicInterior}
-              alt="Recepção da clínica Unità"
-              loading="lazy"
-              width={1200}
-              height={675}
-              className="aspect-[16/10] w-full object-cover transition-transform duration-700 hover:scale-105"
+          <div className="group relative">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 translate-x-3 translate-y-3 border border-gold/50"
+              style={{ borderRadius: CORNER_A }}
             />
+            <div className="shadow-card relative overflow-hidden" style={{ borderRadius: CORNER_A }}>
+              <img
+                src={clinicInterior}
+                alt="Recepção da clínica Unità"
+                loading="lazy"
+                width={1200}
+                height={750}
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -645,7 +745,7 @@ function Index() {
             rel="noreferrer"
             className="flex items-center gap-2 transition-colors hover:text-espresso-foreground"
           >
-            <Instagram className="h-4 w-4" /> @odontounita
+            <InstagramGlyph className="h-4 w-4" /> @odontounita
           </a>
         </div>
       </footer>
