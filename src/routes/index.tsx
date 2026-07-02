@@ -920,6 +920,12 @@ function Index() {
           >
             <InstagramGlyph className="h-4 w-4" /> @odontounita
           </a>
+          <a
+            href="/politica-de-privacidade"
+            className="transition-colors hover:text-espresso-foreground"
+          >
+            Política de privacidade
+          </a>
         </div>
       </footer>
     </div>

@@ -16,19 +16,25 @@ const GTM_ID = import.meta.env.VITE_GTM_ID || "GTM-KNQL8ZKX";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="flex min-h-screen items-center justify-center bg-gradient-hero px-4 py-16">
+      <div className="max-w-xl text-center">
+        <Link to="/" className="inline-flex">
+          <span className="eyebrow">Unità Odontologia & Estética</span>
+        </Link>
+        <p className="mt-8 font-display text-8xl font-light text-gold">404</p>
+        <h1 className="mt-4 font-display text-4xl font-light leading-tight text-foreground sm:text-5xl">
+          Essa página saiu para cuidar do sorriso.
+        </h1>
+        <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+          O endereço pode ter mudado ou não existir mais. Volte para a página inicial e fale com a
+          gente por lá.
         </p>
-        <div className="mt-6">
+        <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full bg-espresso px-7 py-3 text-xs font-normal uppercase tracking-[0.18em] text-espresso-foreground transition-colors hover:bg-gold hover:text-espresso"
           >
-            Go home
+            Voltar para o início
           </Link>
         </div>
       </div>
