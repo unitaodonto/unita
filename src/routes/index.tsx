@@ -780,10 +780,10 @@ function Index() {
             Bora <em className="font-normal italic text-gold">marcar</em> a sua?
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-espresso-foreground/70 sm:mt-6 sm:text-base">
-            Manda uma DM pra gente no Instagram e a gente combina um horário. Pagamento no cartão ou no boleto, do seu jeito.
+            Manda uma mensagem pra gente no WhatsApp e combinamos um horário. Pagamento no cartão ou no boleto, do seu jeito.
           </p>
           <div className="mt-10 flex justify-center">
-            <CTAButton variant="light">Chamar no Instagram</CTAButton>
+            <CTAButton variant="light">Chamar no WhatsApp</CTAButton>
           </div>
         </div>
       </section>
