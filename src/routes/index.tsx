@@ -18,21 +18,24 @@ import {
 
 import logoDark from "@/assets/unita-dark.png.asset.json";
 import logoLight from "@/assets/unita-light.png.asset.json";
-import heroSmile from "@/assets/hero-smile.jpg";
-import serviceInvisalign from "@/assets/service-invisalign.jpg";
-import serviceImplantesProteses from "@/assets/service-implantes-proteses.jpg";
-import clinicInterior from "@/assets/clinic-interior.jpg";
-import esteticaFacial from "@/assets/estetica-facial.jpg";
-import resultSmile from "@/assets/result-smile.jpg";
-import cafe from "@/assets/cafe.jpg";
-import teamGabriela from "@/assets/team-gabriela.jpg";
-import teamLuana from "@/assets/team-luana.jpg";
-import teamGiovanna from "@/assets/team-giovanna.jpg";
-import teamAnaCarolina from "@/assets/team-ana-carolina.jpg";
-import teamStephany from "@/assets/team-stephany.jpg";
-import implante from "@/assets/service-implante.jpg";
+import heroSmile from "@/assets/hero-smile.jpg?w=1200&format=webp&quality=72";
+import serviceInvisalign from "@/assets/service-invisalign.jpg?w=896&format=webp&quality=72";
+import serviceImplantesProteses from "@/assets/service-implantes-proteses.jpg?w=896&format=webp&quality=72";
+import clinicInterior from "@/assets/clinic-interior.jpg?w=1200&format=webp&quality=72";
+import esteticaFacial from "@/assets/estetica-facial.jpg?w=900&format=webp&quality=72";
+import resultSmile from "@/assets/result-smile.jpg?w=896&format=webp&quality=72";
+import cafe from "@/assets/cafe.jpg?w=900&format=webp&quality=72";
+import teamGabriela from "@/assets/team-gabriela.jpg?w=420&format=webp&quality=72";
+import teamLuana from "@/assets/team-luana.jpg?w=420&format=webp&quality=72";
+import teamGiovanna from "@/assets/team-giovanna.jpg?w=420&format=webp&quality=72";
+import teamAnaCarolina from "@/assets/team-ana-carolina.jpg?w=420&format=webp&quality=72";
+import teamStephany from "@/assets/team-stephany.jpg?w=420&format=webp&quality=72";
+import implante from "@/assets/service-implante.jpg?w=1200&format=webp&quality=72";
 
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
+const WHATSAPP_URL =
+  "https://wa.me/5511965980554?text=" +
+  encodeURIComponent("Olá! Vi o site da Unità e gostaria de agendar uma avaliação.");
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -165,7 +168,7 @@ function CTAButton({ children, variant = "dark" }: { children: React.ReactNode; 
       ? "bg-espresso text-espresso-foreground hover:bg-gold hover:text-espresso"
       : "bg-cream text-foreground hover:bg-gold hover:text-espresso";
   return (
-    <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className={`${base} ${styles}`}>
+    <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className={`${base} ${styles}`}>
       <span className="relative z-10">{children}</span>
       <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1.5" />
     </a>
@@ -247,8 +250,8 @@ const services = [
 const steps = [
   {
     num: "01",
-    title: "Chama no Instagram",
-    text: "Manda uma DM pra @odontounita e a gente combina um horário que funciona pra você.",
+    title: "Chama no WhatsApp",
+    text: "Manda uma mensagem pra gente e a gente combina um horário que funciona pra você.",
   },
   {
     num: "02",
@@ -454,7 +457,7 @@ function Index() {
                     loading="lazy"
                     width={896}
                     height={672}
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 ${s.title.startsWith("Invisalign") ? "scale-[1.35]" : ""}`}
                   />
                 </div>
               </div>
@@ -777,10 +780,10 @@ function Index() {
             Bora <em className="font-normal italic text-gold">marcar</em> a sua?
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-espresso-foreground/70 sm:mt-6 sm:text-base">
-            Manda uma DM pra gente no Instagram e a gente combina um horário. Pagamento no cartão ou no boleto, do seu jeito.
+            Manda uma mensagem pra gente no WhatsApp e combinamos um horário. Pagamento no cartão ou no boleto, do seu jeito.
           </p>
           <div className="mt-10 flex justify-center">
-            <CTAButton variant="light">Chamar no Instagram</CTAButton>
+            <CTAButton variant="light">Chamar no WhatsApp</CTAButton>
           </div>
         </div>
       </section>
