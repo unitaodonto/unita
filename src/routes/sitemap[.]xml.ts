@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-/// <reference types="@tanstack/start-client-core/dist/esm/serverRoute" />
+import type { RouteServerOptions } from "@tanstack/start-client-core";
 
 const BASE_URL = "https://unitaodonto.lovable.app";
 
