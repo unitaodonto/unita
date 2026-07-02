@@ -457,7 +457,7 @@ function Index() {
                     loading="lazy"
                     width={896}
                     height={672}
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 ${s.title.startsWith("Invisalign") ? "scale-[1.35]" : ""}`}
                   />
                 </div>
               </div>
