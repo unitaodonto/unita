@@ -36,19 +36,19 @@ function PrivacyPolicy() {
           <h1 className="mt-8 font-display text-4xl font-light leading-tight sm:text-5xl">
             Política de Privacidade
           </h1>
-          <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-2xl text-base font-normal leading-relaxed text-foreground/85">
             Esta política explica como tratamos as informações enviadas pelo site da Unità
             Odontologia & Estética, principalmente em contatos feitos para agendamento, dúvidas e
             atendimento.
           </p>
-          <p className="mt-4 text-sm text-muted-foreground">
+          <p className="mt-4 text-sm font-normal text-foreground/70">
             Última atualização: 02 de julho de 2026.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
-        <div className="space-y-10 leading-relaxed text-muted-foreground">
+        <div className="space-y-10 text-base font-normal leading-8 text-foreground/85 sm:text-lg">
           <PolicySection title="1. Dados que podemos coletar">
             Podemos coletar informações que você envia voluntariamente, como nome, telefone,
             mensagem, preferência de atendimento e dados necessários para responder ao seu contato.
