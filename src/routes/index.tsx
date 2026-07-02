@@ -250,8 +250,8 @@ const services = [
 const steps = [
   {
     num: "01",
-    title: "Chama no Instagram",
-    text: "Manda uma DM pra @odontounita e a gente combina um horário que funciona pra você.",
+    title: "Chama no WhatsApp",
+    text: "Manda uma mensagem pra gente e a gente combina um horário que funciona pra você.",
   },
   {
     num: "02",
