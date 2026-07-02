@@ -560,7 +560,7 @@ function Index() {
             <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
               Cuidado com o <em className="font-normal italic text-gold">rosto</em> também
             </h2>
-            <p className="mt-7 max-w-md leading-relaxed text-espresso-foreground/70">
+            <p className="mt-7 max-w-md leading-relaxed text-espresso-foreground/85">
               Porque o sorriso vem junto com o rosto. A gente cuida dos dois com segurança e sem
               exagero — pra você se sentir bem com o seu rosto, não com o de outra pessoa.
             </p>
@@ -682,7 +682,7 @@ function Index() {
             <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
               Conheça a nossa <em className="font-normal italic text-gold">equipe</em>
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-espresso-foreground/70 sm:mt-6 sm:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-espresso-foreground/85 sm:mt-6 sm:text-lg">
               Profissionais dedicadas a cuidar do seu sorriso com atenção, técnica e carinho.
             </p>
           </div>
@@ -898,7 +898,7 @@ function Index() {
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
             Bora <em className="font-normal italic text-gold">marcar</em> a sua?
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-espresso-foreground/70 sm:mt-6 sm:text-base">
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-espresso-foreground/85 sm:mt-6 sm:text-base">
             Manda uma mensagem pra gente no WhatsApp e combinamos um horário. Pagamento no cartão ou
             no boleto, do seu jeito.
           </p>

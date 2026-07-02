@@ -21,11 +21,11 @@ function NotFoundComponent() {
         <Link to="/" className="inline-flex">
           <span className="eyebrow">Unità Odontologia & Estética</span>
         </Link>
-        <p className="mt-8 font-display text-8xl font-light text-gold">404</p>
-        <h1 className="mt-4 font-display text-4xl font-light leading-tight text-foreground sm:text-5xl">
+        <p className="mt-8 font-display text-8xl font-normal text-espresso">404</p>
+        <h1 className="mt-4 font-display text-4xl font-normal leading-tight text-foreground sm:text-5xl">
           Essa página saiu para cuidar do sorriso.
         </h1>
-        <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-5 max-w-md text-base font-normal leading-relaxed text-foreground/85">
           O endereço pode ter mudado ou não existir mais. Volte para a página inicial e fale com a
           gente por lá.
         </p>

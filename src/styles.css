@@ -83,7 +83,7 @@
   --secondary: oklch(0.93 0.012 82);
   --secondary-foreground: oklch(0.38 0.02 65);
   --muted: oklch(0.94 0.01 82);
-  --muted-foreground: oklch(0.55 0.02 70);
+  --muted-foreground: oklch(0.42 0.02 68);
   --accent: oklch(0.88 0.025 80);
   --accent-foreground: oklch(0.34 0.018 65);
   --destructive: oklch(0.577 0.245 27.325);
@@ -162,7 +162,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
