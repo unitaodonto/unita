@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type {} from "@tanstack/react-start";
 
 const BASE_URL = "https://unitaodonto.lovable.app";
 
@@ -9,6 +8,10 @@ interface SitemapEntry {
   priority?: string;
 }
 
+// Cast: the `server` route option is added via module augmentation in
+// @tanstack/start-client-core/serverRoute, which the package publishes as a
+// type-only re-export. Some type-checkers drop that augmentation, so we cast
+// the options object here to keep the server handler typed at runtime.
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
@@ -43,4 +46,4 @@ export const Route = createFileRoute("/sitemap.xml")({
       },
     },
   },
-});
+} as never);
