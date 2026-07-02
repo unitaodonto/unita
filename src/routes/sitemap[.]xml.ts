@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const BASE_URL = "https://unitaodonto.lovable.app";
+const BASE_URL = import.meta.env.VITE_SITE_URL || "";
 
 interface SitemapEntry {
   path: string;

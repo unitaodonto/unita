@@ -34,7 +34,7 @@ import teamAnaCarolina from "@/assets/team-ana-carolina.jpg?w=420&format=webp&qu
 import teamStephany from "@/assets/team-stephany.jpg?w=420&format=webp&quality=72";
 import implante from "@/assets/service-implante.jpg?w=1200&format=webp&quality=72";
 
-const SITE_URL = "https://unitaodonto.lovable.app";
+const SITE_URL = import.meta.env.VITE_SITE_URL || "";
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 const WHATSAPP_URL =
   "https://wa.me/5511965980554?text=" +
@@ -100,7 +100,7 @@ export const Route = createFileRoute("/")({
           description:
             "Clínica odontológica com atendimento humanizado, estética dental e facial — facetas, clareamento, implantes e Invisalign.",
           url: `${SITE_URL}/`,
-          image: SITE_URL + heroSmile,
+          image: SITE_URL ? SITE_URL + heroSmile : heroSmile,
           telephone: "",
           priceRange: "$$",
           areaServed: [
