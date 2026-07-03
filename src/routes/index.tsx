@@ -34,12 +34,16 @@ import teamAnaCarolina from "@/assets/team-ana-carolina.jpg?w=420&format=webp&qu
 import teamStephany from "@/assets/team-stephany.jpg?w=420&format=webp&quality=72";
 import implante from "@/assets/service-implante.jpg?w=1200&format=webp&quality=72";
 
-const SITE_URL = import.meta.env.VITE_SITE_URL || "";
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://unitaodonto.lovable.app").replace(
+  /\/$/,
+  "",
+);
 const INSTAGRAM_URL = "https://www.instagram.com/odontounita/";
 const WHATSAPP_URL =
   "https://wa.me/5511965980554?text=" +
   encodeURIComponent("Olá! Vi o site da Unità e gostaria de agendar uma avaliação.");
 const HERO_SRCSET = `${heroSmile480} 480w, ${heroSmile768} 768w, ${heroSmile} 1200w`;
+const HERO_SHARE_IMAGE = `${SITE_URL}${heroSmile}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -63,7 +67,7 @@ export const Route = createFileRoute("/")({
           "Seu sorriso, cuidado com excelência. Avaliação gratuita, preço justo e facilidade de pagamento.",
       },
       { property: "og:url", content: `${SITE_URL}/` },
-      { property: "og:image", content: heroSmile },
+      { property: "og:image", content: HERO_SHARE_IMAGE },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "901" },
       { property: "og:image:alt", content: "Equipe da Unità Odontologia & Estética" },
@@ -72,7 +76,7 @@ export const Route = createFileRoute("/")({
         name: "twitter:description",
         content: "Avaliação gratuita, estética dental e facial em SBC e Santo André.",
       },
-      { name: "twitter:image", content: heroSmile },
+      { name: "twitter:image", content: HERO_SHARE_IMAGE },
       {
         name: "keywords",
         content:
@@ -85,9 +89,9 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: heroSmile768,
-        imagesrcset: HERO_SRCSET,
-        imagesizes: "(min-width: 768px) 50vw, 92vw",
-        fetchpriority: "high",
+        imageSrcSet: HERO_SRCSET,
+        imageSizes: "(min-width: 768px) 50vw, 92vw",
+        fetchPriority: "high",
       } as unknown as { rel: string; href: string },
     ],
     scripts: [
@@ -100,7 +104,7 @@ export const Route = createFileRoute("/")({
           description:
             "Clínica odontológica com atendimento humanizado, estética dental e facial — facetas, clareamento, implantes e Invisalign.",
           url: `${SITE_URL}/`,
-          image: SITE_URL ? SITE_URL + heroSmile : heroSmile,
+          image: HERO_SHARE_IMAGE,
           telephone: "",
           priceRange: "$$",
           areaServed: [
