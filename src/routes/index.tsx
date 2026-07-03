@@ -417,7 +417,7 @@ function Index() {
           <img
             src={logoDark}
             alt="Unità Odontologia & Estética"
-            className="h-12 w-auto sm:h-14 md:h-16"
+            className="h-16 w-auto sm:h-20 md:h-24"
             width={854}
             height={446}
           />
