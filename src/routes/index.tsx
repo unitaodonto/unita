@@ -415,7 +415,7 @@ function Index() {
       <header className="absolute inset-x-0 top-0 z-20">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6">
           <img
-            src={logoDark.url}
+            src={logoDark}
             alt="Unità Odontologia & Estética"
             className="h-12 w-auto sm:h-14 md:h-16"
             width={854}
@@ -891,7 +891,7 @@ function Index() {
       <section className="content-auto bg-espresso text-espresso-foreground">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-24 md:py-32">
           <img
-            src={logoLight.url}
+            src={logoLight}
             alt=""
             loading="lazy"
             decoding="async"
