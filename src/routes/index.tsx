@@ -895,7 +895,7 @@ function Index() {
             alt=""
             loading="lazy"
             decoding="async"
-            className="mx-auto mb-8 h-16 w-auto opacity-90 sm:mb-10 sm:h-20"
+            className="mx-auto mb-8 h-20 w-auto opacity-90 sm:mb-10 sm:h-32"
             width={854}
             height={446}
           />
