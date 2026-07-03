@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-const SITE_URL = import.meta.env.VITE_SITE_URL || "";
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://unitaodonto.lovable.app").replace(
+  /\/$/,
+  "",
+);
 
 export const Route = createFileRoute("/politica-de-privacidade")({
   head: () => ({
