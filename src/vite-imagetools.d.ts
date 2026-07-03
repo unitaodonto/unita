@@ -1,8 +1,8 @@
-declare module "*format=webp&quality=72" {
+declare module "*format=webp*" {
   const src: string;
   export default src;
 }
-declare module "*format=avif&quality=72" {
+declare module "*format=avif*" {
   const src: string;
   export default src;
 }
