@@ -16,8 +16,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import logoDark from "@/assets/unita-dark.png.asset.json";
-import logoLight from "@/assets/unita-light.png.asset.json";
+import logoDark from "@/assets/unita-dark.png";
+import logoLight from "@/assets/unita-light.png";
 import heroSmile480 from "@/assets/hero-smile.jpg?w=480&format=webp&quality=68";
 import heroSmile768 from "@/assets/hero-smile.jpg?w=768&format=webp&quality=70";
 import heroSmile from "@/assets/hero-smile.jpg?w=1200&format=webp&quality=72";
