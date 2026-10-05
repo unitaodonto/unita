@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://unitaodonto.lovable.app").replace(
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.unitaodonto.com.br").replace(
   /\/$/,
   "",
 );

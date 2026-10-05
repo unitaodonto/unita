@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const BASE_URL = (import.meta.env.VITE_SITE_URL || "https://unitaodonto.lovable.app").replace(
+const BASE_URL = (import.meta.env.VITE_SITE_URL || "https://www.unitaodonto.com.br").replace(
   /\/$/,
   "",
 );

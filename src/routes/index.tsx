@@ -34,7 +34,7 @@ import teamAnaCarolina from "@/assets/team-ana-carolina.jpg?w=420&format=webp&qu
 import teamStephany from "@/assets/team-stephany.jpg?w=420&format=webp&quality=72";
 import implante from "@/assets/service-implante.jpg?w=1200&format=webp&quality=72";
 
-const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://unitaodonto.lovable.app").replace(
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.unitaodonto.com.br").replace(
   /\/$/,
   "",
 );
