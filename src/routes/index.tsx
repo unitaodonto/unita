@@ -105,7 +105,7 @@ export const Route = createFileRoute("/")({
             "Clínica odontológica com atendimento humanizado, estética dental e facial — facetas, clareamento, implantes e Invisalign.",
           url: `${SITE_URL}/`,
           image: HERO_SHARE_IMAGE,
-          telephone: "",
+          telephone: "+55 11 96598-0554",
           priceRange: "$$",
           areaServed: [
             { "@type": "City", name: "São Bernardo do Campo" },
@@ -345,7 +345,7 @@ const depoimentos = [
   },
   {
     name: "Sabrina Romão",
-    text: "Clínica muito limpa e organizada. Fui atendida pela Dra Luana Rodrigues, super atenciosa, e voltei para uma aplicação de botox, que foi bem tranquila e sem dor!",
+    text: "Clínica muito limpa e organizada. Fui atendida pela Dra Luana Rodrigues, super atenciosa, e voltei para um procedimento estético, que foi bem tranquilo e sem dor!",
   },
   {
     name: "Lais Estevam",
@@ -517,7 +517,10 @@ function Index() {
       </section>
 
       {/* Services */}
-      <section className="content-auto mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
+      <section
+        id="tratamentos"
+        className="content-auto mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32"
+      >
         <div className="mb-12 max-w-2xl sm:mb-16">
           <p className="eyebrow mb-4 sm:mb-5">O que a gente faz</p>
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
@@ -611,7 +614,7 @@ function Index() {
       </section>
 
       {/* Humanized care */}
-      <section className="content-auto bg-cream">
+      <section id="pagamento" className="content-auto bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-2 md:py-32">
           <div className="relative">
             <div
@@ -679,7 +682,7 @@ function Index() {
       </section>
 
       {/* Nossa Equipe */}
-      <section className="content-auto bg-espresso text-espresso-foreground">
+      <section id="equipe" className="content-auto bg-espresso text-espresso-foreground">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
           <div className="mb-12 text-center sm:mb-16">
             <p className="eyebrow mb-4 sm:mb-5">Quem cuida de você</p>
@@ -727,7 +730,10 @@ function Index() {
       </section>
 
       {/* Como funciona */}
-      <section className="content-auto mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32">
+      <section
+        id="como-funciona"
+        className="content-auto mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 md:py-32"
+      >
         <div className="mb-12 text-center sm:mb-16">
           <p className="eyebrow mb-4 sm:mb-5">Como funciona</p>
           <h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
